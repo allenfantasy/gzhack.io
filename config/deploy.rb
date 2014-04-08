@@ -1,7 +1,8 @@
 require "rvm/capistrano"
 
-set :bundle_cmd, "/home/deployer/.rvm/gems/ruby-2.0.0-p451@global/bin/bundle"
-set :bundle_dir, '/home/deployer/.rvm/gems/ruby-2.0.0-p451'
+set :bundle_cmd, "/home/deployer/.rvm/gems/ruby-2.1.0/bin/bundle"
+set :bundle_dir, '/home/deployer/.rvm/gems/ruby-2.1.0'
+set :rvm_ruby_version, 'ruby-2.1.0'
 require "bundler/capistrano"
 
 load "config/recipes/base"
