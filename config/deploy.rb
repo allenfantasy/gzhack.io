@@ -1,4 +1,7 @@
 require "rvm/capistrano"
+
+set :bundle_cmd, "/home/deployer/.rvm/gems/ruby-2.0.0-p451@global/bin/bundle"
+set :bundle_dir, '/home/deployer/.rvm/gems/ruby-2.0.0-p451'
 require "bundler/capistrano"
 
 load "config/recipes/base"
