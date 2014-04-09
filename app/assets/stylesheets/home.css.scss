@@ -1,0 +1,23 @@
+$img-size: 300px;
+
+#home {
+  #logo {
+    text-align: center;
+    img {
+      width: 780px;
+      height: 450px;
+    }
+  }
+  #entries {
+    background-color: #000;
+    text-align: center;
+    .inner {
+      padding: 50px;
+      overflow: hidden;
+      .entry {
+        float: left;
+        width: 33%;
+      }
+    }
+  }
+}
