@@ -1,0 +1,22 @@
+<table>
+  <tr>
+    <th>姓名</th>
+    <th>角色</th>
+    <th>单位/学校</th>
+    <th>电话号码</th>
+    <th>个人主页</th>
+    <th></th>
+  </tr>
+  <% @users.each do |user| %>
+    <tr>
+      <td><%= user.name %></td>
+      <td><%= user.type_name %></td>
+      <td><%= user.organ %></td>
+      <td><%= user.tel %></td>
+      <td><%= raw user.homepages %></td>
+      <td>
+        <%= link_to '查看详情', cpanel_user_path(user) %>
+      </td>
+    </tr>
+  <% end %>
+</table>

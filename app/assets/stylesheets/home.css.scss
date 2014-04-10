@@ -1,6 +1,7 @@
 $img-size: 300px;
 
 #home {
+  /*home page*/
   #logo {
     text-align: center;
     img {
@@ -17,6 +18,47 @@ $img-size: 300px;
       .entry {
         float: left;
         width: 33%;
+      }
+    }
+  }
+
+  /*about page*/
+  #about {
+    margin-top: 100px;
+    ul#navigation {
+      margin-top: 0;
+      position: fixed;
+      top: 100px;
+      list-style: none;
+      li {
+        a {
+          text-decoration: none;
+        }
+        margin-bottom: 20px;
+      }
+    }
+    #flash {
+      position: fixed;
+      left: 512px;
+      top: 0;
+    }
+    #content {
+      float: right;
+      width: 700px;
+      .field {
+        overflow: hidden;
+        .label, .input { float: left; }
+        .label {
+          width: 100px;
+          min-height: 30px;
+          label {
+            float: left;
+            padding-top: 5px;
+          }
+        }
+        .input { width: 500px; }
+      }
+      #signup .personal {
       }
     }
   }

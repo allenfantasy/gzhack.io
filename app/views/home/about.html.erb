@@ -1,0 +1,125 @@
+<section id="about">
+  <div class="container">
+    <ul id="navigation">
+      <li>
+        <a href="#">
+          <img src="logo.png" width="206" height="100" alt="2014年首届广州创客马拉松">
+        </a>
+      </li>
+      <li>
+        <a href="#what">活动介绍</a>
+      </li>
+      <li>
+        <a href="#eventfor">面向人群</a>
+      </li>
+      <li>
+        <a href="#detail">活动详情</a>
+      </li>
+      <li>
+        <a href="#price">奖项</a>
+      </li>
+      <li>
+        <a href="#sponsor">赞助商</a>
+      </li>
+      <li>
+        <a href="#signup">报名</a>
+      </li>
+    </ul>
+    <div id="flash">
+      <% flash.each do |type, message| %>
+        <%= content_tag(:div, raw(message), :class => "alert-#{type}") %>
+      <% end %>
+    </div>
+    <div id="content">
+      Lorem ipsum
+      Lorem ipsum
+      Lorem ipsum
+      Lorem ipsum
+      Lorem ipsum
+      Lorem ipsum
+      Lorem ipsum
+      Lorem ipsum
+      Lorem ipsum
+      Lorem ipsum
+      Lorem ipsum
+      Lorem ipsum
+      Lorem ipsum
+      Lorem ipsum
+      Lorem ipsum
+      <div id="signup">
+        <h3>活动报名</h3>
+        <%= form_for User.new do |f| %>
+          <div class="field">
+            <div class="label">
+              <%= f.label :name, '姓名' %>
+            </div>
+            <div class="input">
+              <%= f.text_field :name %>
+            </div>
+          </div>
+
+          <div class="field">
+            <div class="label">
+              <%= f.label :tel, '手机号码' %>
+            </div>
+            <div class="input">
+              <%= f.text_field :tel %>
+            </div>
+          </div>
+
+          <div class="field">
+            <div class="label">
+              <%= f.label :organ, '单位或学校' %>
+            </div>
+            <div class="input">
+              <%= f.text_field :organ %>
+            </div>
+          </div>
+
+          <div class="field">
+            <div class="label">
+            <%= f.label :about, '关于你' %>
+            </div>
+            <div class="input">
+            <p>用一段话介绍你的经历，兴趣和个人情况。</p>
+            <%= f.text_area :about, :size => "40x10" %>
+            </div>
+          </div>
+
+          <div class="field">
+            <div class="label">
+              <%= f.label :user_type, '你的角色' %>
+            </div>
+            <div class="input">
+              <%= f.radio_button :user_type, "coder", :checked => true %>程序员
+              <%= f.radio_button :user_type, "designer" %>设计师
+              <%= f.radio_button :user_type, "pm" %>产品经理
+              <%= f.radio_button :user_type, "others" %>其他
+              <%= text_field_tag :other_type %>
+            </div>
+          </div>
+
+          <div class="field personal">
+            <div class="label">
+              <%= f.label :homepage, '个人主页' %>
+            </div>
+            <div class="input">
+              <div class="row">
+                <input type="text" name="user[homepage][0]">
+                <a id="add_homepage" href="javascript:void(0)">添加</a>
+              </div>
+            </div>
+            <!-- add button -->
+          </div>
+          <div class="field">
+            <div class="label">
+            </div>
+            <div class="input">
+              <%= f.submit "确认报名" %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>

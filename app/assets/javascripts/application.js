@@ -14,3 +14,20 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+$(document).ready(function() {
+  if ($('#home section#about').length > 0) {
+    $('#signup #add_homepage').click(function() {
+      var $div = $('<div></div>', {
+        'class': 'row'
+      }).appendTo($('#signup .field.personal .input'));
+
+      $('<input></input>', {
+        'type': 'text',
+        'name': 'user[homepage][' + $('#signup .personal input').length + ']'
+      }).appendTo($div);
+
+      $('#signup #add_homepage').appendTo($div);
+    });
+  }
+});
