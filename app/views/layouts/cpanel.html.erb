@@ -14,14 +14,29 @@
   <% end %>
 </div>
 
+<% if user_signed_in? %>
 <ul class="nav">
-  <li><%= link_to "后台主界面", cpanel_dashboard_path %></li>
+  <li><%= link_to "后台主界面", cpanel_path %></li>
   <li><%= link_to "活动主页", root_path %></li>
   <li><%= link_to "报名列表", cpanel_users_path %></li>
   <li><%= link_to "活动列表", cpanel_events_path %></li>
 </ul>
 
 <%= yield %>
+
+<% else %>
+  <%= form_tag cpanel_session_path, :method => :post do %>
+    <div>
+      <%= text_field_tag :username, nil, :placeholder => "Username" %>
+    </div>
+    <div>
+      <%= password_field_tag :password, nil, :placeholder => "Password" %>
+    </div>
+    <div>
+      <%= submit_tag "Sign In" %>
+    </div>
+  <% end %>
+<% end %>
 
 </body>
 </html>

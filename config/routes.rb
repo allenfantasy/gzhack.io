@@ -17,6 +17,9 @@ Gzhack::Application.routes.draw do
   namespace :cpanel do
     resources :events
     resources :users
-    get '/dashboard' => 'dashboard#index'
+
+    get '/' => 'dashboard#index'
+    post '/sign_in' => 'session#create', :as => 'session'
+    delete '/sign_out' => 'session#destory', :as => 'destroy_session'
   end
 end
