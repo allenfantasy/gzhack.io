@@ -1,0 +1,20 @@
+<table>
+  <tr>
+    <th>活动名称</th>
+    <th>时间</th>
+    <th>地点</th>
+    <th></th>
+    <th></th>
+  </tr>
+  <% @events.each do |e| %>
+  <tr>
+    <td><%= link_to e.name, cpanel_event(e) %></td>
+    <td><%= e.time %></td>
+    <td><%= e.location %></td>
+    <td><%= link_to '编辑', edit_cpanel_event_path(e) %></td>
+    <td><%= link_to '删除', cpanel_event(e), :method => :delete %></td>
+  </tr>
+  <% end %>
+</table>
+
+<%= link_to "新建活动", new_cpanel_event_path %>
