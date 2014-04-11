@@ -3,7 +3,7 @@
     <th>姓名</th>
     <th>角色</th>
     <th>单位/学校</th>
-    <th>电话号码</th>
+    <th>邮箱</th>
     <th>个人主页</th>
     <th>个人作品</th>
     <th></th>
@@ -13,7 +13,7 @@
       <td><%= user.name %></td>
       <td><%= user.type_name %></td>
       <td><%= user.organ %></td>
-      <td><%= user.tel %></td>
+      <td><%= user.email %></td>
       <td><%= raw user.homepages %></td>
       <td>
         <%= attachments_for(user) %>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140411062421) do
+ActiveRecord::Schema.define(version: 20140411093443) do
 
   create_table "attachments", force: true do |t|
     t.datetime "created_at"
@@ -45,7 +45,7 @@ ActiveRecord::Schema.define(version: 20140411062421) do
 
   create_table "users", force: true do |t|
     t.string   "name"
-    t.string   "tel"
+    t.string   "email"
     t.string   "organ"
     t.string   "homepage"
     t.string   "user_type"

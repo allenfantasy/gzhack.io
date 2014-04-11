@@ -9,8 +9,10 @@ class User < ActiveRecord::Base
   has_many :attachments, :dependent => :destroy
   accepts_nested_attributes_for :attachments
 
-  validates_presence_of :name, :tel, :organ, :user_type, :about
-  validates_format_of :tel, :with => /[\d]{11}/
+  validates_presence_of :name, :email, :organ, :user_type, :about
+
+  # thanks to http://stackoverflow.com/questions/201323/using-a-regular-expression-to-validate-an-email-address
+  validates_format_of :email, :with => /^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/
 
   def homepages
     homepage.split(' ').join("<br >")
