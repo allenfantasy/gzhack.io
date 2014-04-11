@@ -12,7 +12,7 @@ class User < ActiveRecord::Base
   validates_presence_of :name, :email, :organ, :user_type, :about
 
   # thanks to http://stackoverflow.com/questions/201323/using-a-regular-expression-to-validate-an-email-address
-  validates_format_of :email, :with => /^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/
+  validates_format_of :email, :with => /\A[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})\z/i
 
   def homepages
     homepage.split(' ').join("<br >")
