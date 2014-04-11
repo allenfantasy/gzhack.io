@@ -4,7 +4,6 @@ class User < ActiveRecord::Base
     'coder' => '程序员',
     'designer' => '设计师',
     'pm' => '产品经理',
-    'others' => '其他'
   }
 
   has_many :attachments, :dependent => :destroy
@@ -18,6 +17,6 @@ class User < ActiveRecord::Base
   end
 
   def type_name
-    TYPES[user_type]
+    TYPES[user_type] || user_type
   end
 end

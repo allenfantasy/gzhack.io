@@ -20,6 +20,7 @@
       </td>
       <td>
         <%= link_to '查看详情', cpanel_user_path(user) %>
+        <%= link_to '删除报名信息', cpanel_user_path(user), :method => :delete, :data => { :confirm => "确定删除吗?" } %>
       </td>
     </tr>
   <% end %>
