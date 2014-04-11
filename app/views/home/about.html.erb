@@ -48,7 +48,7 @@
       Lorem ipsum
       <div id="signup">
         <h3>活动报名</h3>
-        <%= form_for User.new do |f| %>
+        <%= form_for @user do |f| %>
           <div class="field">
             <div class="label">
               <%= f.label :name, '姓名' %>
@@ -111,6 +111,18 @@
             </div>
             <!-- add button -->
           </div>
+          <div class="field">
+            <%= f.fields_for :attachments do |af| %>
+            <div class="label">
+              <%= af.label :file, '个人作品' %>
+            </div>
+            <div class="input">
+              <p>若有多个作品请打包成zip文件上传</p>
+              <%= af.file_field :file, :multiple => true, :name => "attachments[file][]" %>
+            </div>
+            <% end %>
+          </div>
+
           <div class="field">
             <div class="label">
             </div>

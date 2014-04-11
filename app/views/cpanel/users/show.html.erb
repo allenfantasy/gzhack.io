@@ -23,3 +23,7 @@
   <strong>个人介绍：</strong>
   <span><%= @user.about %></span>
 </div>
+<div class="row">
+  <strong>个人作品：</strong>
+  <span><%= attachments_for(@user) %></span>
+</div>

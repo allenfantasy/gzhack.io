@@ -9,6 +9,9 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
+      params[:attachments]['file'].each do |a|
+        @attachment = @user.attachments.create!(:file => a, :user_id => @user.id)
+      end
       redirect_to about_path, :notice => '报名成功！'
     else
 
@@ -19,7 +22,7 @@ class UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:name, :tel, :organ, :homepage, :user_type, :about)
+    params.require(:user).permit(:name, :tel, :organ, :homepage, :user_type, :about, :attachments_attributes => [:id, :user_id, :file])
   end
 
 end

@@ -11,6 +11,9 @@ gem 'jquery-rails'
 
 gem 'turbolinks'
 
+gem 'mini_magick'
+gem 'carrierwave'
+
 gem 'jbuilder', '~> 1.2'
 
 group :doc do
@@ -24,6 +27,7 @@ end
 group :development do
   gem 'capistrano', '~> 2.15'
   gem 'rvm-capistrano'
+  gem 'pry-rails'
 end
 
 group :production do

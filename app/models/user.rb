@@ -7,9 +7,10 @@ class User < ActiveRecord::Base
     'others' => '其他'
   }
 
-  has_many :files, :class_name => "UserFile"
+  has_many :attachments, :dependent => :destroy
+  accepts_nested_attributes_for :attachments
 
-  validates_presence_of :name, :tel, :organ, :homepage, :user_type, :about
+  validates_presence_of :name, :tel, :organ, :user_type, :about
   validates_format_of :tel, :with => /[\d]{11}/
 
   def homepages
@@ -17,6 +18,6 @@ class User < ActiveRecord::Base
   end
 
   def type_name
-    TYPES[type]
+    TYPES[user_type]
   end
 end

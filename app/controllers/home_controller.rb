@@ -6,5 +6,7 @@ class HomeController < ApplicationController
   end
 
   def about
+    @user = User.new
+    @user_attachment = @user.attachments.build
   end
 end
