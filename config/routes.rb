@@ -8,6 +8,7 @@ Gzhack::Application.routes.draw do
   get '/event' => 'home#detail'
   get '/about' => 'home#about'
   get '/signup' => 'home#signup'
+  get '/home' => 'home#index'
 
   post '/users' => 'users#create'
 
