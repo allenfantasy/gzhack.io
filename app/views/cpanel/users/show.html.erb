@@ -1,29 +1,31 @@
-<h1>报名信息</h1>
-<div class="row">
-  <strong>姓名：</strong>
-  <span><%= @user.name %></span>
-</div>
-<div class="row">
-  <strong>角色：</strong>
-  <span><%= @user.type_name %></span>
-</div>
-<div class="row">
-  <strong>单位/学校：</strong>
-  <span><%= @user.organ %></span>
-</div>
-<div class="row">
-  <strong>邮箱：</strong>
-  <span><%= @user.email %></span>
-</div>
-<div class="row">
-  <strong>个人主页：</strong>
-  <span><%= raw @user.homepages %></span>
-</div>
-<div class="row">
-  <strong>个人介绍：</strong>
-  <span><%= @user.about %></span>
-</div>
-<div class="row">
-  <strong>个人作品：</strong>
-  <span><%= attachments_for(@user) %></span>
+<h6>报名信息</h6>
+<div class="list-group">
+  <div class="list-group-item">
+    <p class="list-group-item-heading">姓名</p>
+    <p class="list-group-item-text"><%= @user.name %></p>
+  </div>
+  <div class="list-group-item">
+    <p class="list-group-item-heading">角色</p>
+    <p class="list-group-item-text"><%= @user.type_name %></p>
+  </div>
+  <div class="list-group-item">
+    <p class="list-group-item-heading">单位/学校</p>
+    <p class="list-group-item-text"><%= @user.organ %></p>
+  </div>
+  <div class="list-group-item">
+    <p class="list-group-item-heading">邮箱</p>
+    <p class="list-group-item-text"><%= @user.email %></p>
+  </div>
+  <div class="list-group-item">
+    <p class="list-group-item-heading">个人主页</p>
+    <p class="list-group-item-text"><%= raw @user.homepages %></p>
+  </div>
+  <div class="list-group-item">
+    <p class="list-group-item-heading">个人介绍</p>
+    <p class="list-group-item-text"><%= @user.about %></p>
+  </div>
+  <div class="list-group-item">
+    <p class="list-group-item-heading">个人作品</p>
+    <p class="list-group-item-text"><%= attachments_for(@user) %></p>
+  </div>
 </div>
