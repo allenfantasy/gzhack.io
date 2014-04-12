@@ -6,7 +6,7 @@
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
-<body id="<%= controller_name %>">
+<body id="<%= controller_name %>" class="cpanel">
 
 <div class="flash">
   <% flash.each do |type, message| %>
@@ -15,12 +15,17 @@
 </div>
 
 <% if user_signed_in? %>
-<ul class="nav">
-  <li><%= link_to "后台主界面", cpanel_path %></li>
-  <li><%= link_to "活动主页", root_path %></li>
-  <li><%= link_to "报名列表", cpanel_users_path %></li>
-  <li><%= link_to "活动列表", cpanel_events_path %></li>
-</ul>
+<nav class="navbar navbar-inverse" role="navigation">
+  <div class="collapse navbar-collapse" id="navbar-collapse-01">
+    <ul class="nav navbar-nav">
+      <li><%= link_to "后台主界面", cpanel_path %></li>
+      <li><%= link_to "活动主页", root_path %></li>
+      <li><%= link_to "报名列表", cpanel_users_path %></li>
+      <li><%= link_to "活动列表", cpanel_events_path %></li>
+    </ul>
+  </div>
+<!-- Navbar content -->
+</nav>
 
 <%= yield %>
 
