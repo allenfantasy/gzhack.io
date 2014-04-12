@@ -11,8 +11,9 @@ class UsersController < ApplicationController
     if @user.save
       params[:attachments]['file'].each do |a|
         @attachment = @user.attachments.create!(:file => a, :user_id => @user.id)
-      redirect_to about_path, :notice => '报名成功！'
       end if params[:attachments]
+      flash[:success] = '报名成功！'
+      redirect_to about_path
     else
 
       logger.info @user.errors.full_messages
