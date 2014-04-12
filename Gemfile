@@ -16,6 +16,8 @@ gem 'carrierwave'
 
 gem 'jbuilder', '~> 1.2'
 
+gem 'flat-ui-sass', github: 'wingrunr21/flat-ui-sass'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
