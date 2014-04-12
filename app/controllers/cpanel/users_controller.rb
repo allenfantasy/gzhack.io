@@ -17,4 +17,12 @@ class Cpanel::UsersController < Cpanel::ApplicationController
     end
 
   end
+
+  def export
+    if User.export
+      redirect_to cpanel_user_path, :notice => "导出成功!"
+    else
+      redirect_to cpanel_user_path, :alert => "导出失败!"
+    end
+  end
 end

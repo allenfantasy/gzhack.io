@@ -13,6 +13,7 @@ gem 'turbolinks'
 
 gem 'mini_magick'
 gem 'carrierwave'
+gem 'spreadsheet'
 
 gem 'jbuilder', '~> 1.2'
 
