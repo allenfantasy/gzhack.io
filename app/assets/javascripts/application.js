@@ -12,22 +12,37 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
+//= require bootstrap/alert
+//= require flat-ui
+//= require skdslider
 //= require_tree .
 
 $(document).ready(function() {
-  if ($('#home section#about').length > 0) {
-    $('#signup #add_homepage').click(function() {
-      var $div = $('<div></div>', {
-        'class': 'row'
-      }).appendTo($('#signup .field.personal .input'));
-
+  if ($('#home section.about').length > 0) {
+    var $inputs = $('#signup form#new_user .personal .inputs');
+    $inputs.find('#add_homepage').click(function() {
       $('<input></input>', {
         'type': 'text',
-        'name': 'user[homepage][' + $('#signup .personal input').length + ']'
-      }).appendTo($div);
+        'name': 'user[homepage][' + $inputs.find('input').length + ']',
+        'class': 'form-control'
+      }).insertBefore($inputs.find('#add_homepage'));
+    });
 
-      $('#signup #add_homepage').appendTo($div);
+    $(".select-role input[name='user[user_type]']").change(function(){
+      if($("input:radio[name='user[user_type]']:checked").val() === "others"){
+        $("#other_type").trigger('focus');
+      } else {
+        $("#other_type").trigger('blur');
+      }
+    });
+    $('#other_type').focus(function() {
+      $(".select-role input[name='user[user_type]']").attr('checked', false);
+      $("#user_user_type_others").attr('checked', 'checked');
+
+      $('.select-role .radio').removeClass('checked');
+      $("input#user_user_type_others").parent('.radio').addClass('checked');
+
     });
   }
+
 });
