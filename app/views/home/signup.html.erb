@@ -1,0 +1,95 @@
+<%= render 'shared/header' %>
+
+<div class="row signup">
+
+  <div class="col-xs-12 col-sm-12 col-md-12">
+    <% flash.each do |type, message| %>
+      <div class="alert alert-<%= type %> alert-dismissable">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+        <%== message %>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="col-xs-12 col-sm-12 col-md-12" id="signup">
+
+    <h4>活动报名</h4>
+
+    <%= form_for @user, role: 'form' do |f| %>
+      <div class="row">
+        <div class="form-group col-xs-5">
+          <%= f.label :name, '姓名' %>
+          <%= f.text_field :name, class: 'form-control validating', placeholder: 'Name'  %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="form-group col-xs-5">
+          <%= f.label :email, '邮箱' %>
+          <%= f.text_field :email, class: 'form-control validating', placeholder: 'Email'  %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="form-group col-xs-5">
+          <%= f.label :organ, '单位或学校' %>
+          <%= f.text_field :organ, class: 'form-control validating', placeholder: 'Organization'  %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="form-group col-xs-10">
+          <%= f.label :about, '关于你' %>
+          <%= f.text_area :about, rows: '5', class: 'form-control validating' %>
+          <span class="help-block">用一段话介绍你的经历，兴趣和个人情况。</span>
+        </div>
+      </div>
+
+      <div class="select-role">
+        <%= f.label :user_type, '你的角色' %>
+        <label class="radio">
+          <%= f.radio_button :user_type, "coder", :checked => true, data: {toggle: 'radio'} %>
+          程序员
+        </label>
+        <label class="radio">
+          <%= f.radio_button :user_type, "designer", data: {toggle: 'radio'} %>
+          设计师
+        </label>
+        <label class="radio">
+          <%= f.radio_button :user_type, "pm", data: {toggle: 'radio'} %>
+          产品经理
+        </label>
+        <label class="radio">
+          <%= f.radio_button :user_type, "others", data: {toggle: 'radio'} %>
+          其他
+        </label>
+        <div class="row">
+          <div class="form-group col-xs-5">
+            <%= text_field_tag :other_type, '', class: 'form-control', placeholder: 'Role' %>
+          </div>
+        </div>
+      </div>
+
+      <div class="row personal">
+        <div class="form-group col-xs-5 inputs">
+          <%= f.label :homepage, '个人主页' %>
+          <input type="text" name="user[homepage][0]" class='form-control'>
+          <a id="add_homepage" href="javascript:void(0)">添加</a>
+        </div>
+      </div>
+
+      <div class="row">
+        <%= f.fields_for :attachments do |af| %>
+          <div class="form-group col-xs-10">
+            <%= af.label :file, '个人作品' %>
+            <%= af.file_field :file, :multiple => true, :name => "attachments[file][]" %>
+            <span class="help-block">若有多个作品请打包成zip文件上传</span>
+          </div>
+        <% end %>
+      </div>
+
+      <%= f.submit "确认报名", class: 'btn btn-primary btn-wide' %>
+    <% end %>
+
+  </div>
+</div>

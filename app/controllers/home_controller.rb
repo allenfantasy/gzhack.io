@@ -7,6 +7,9 @@ class HomeController < ApplicationController
   end
 
   def about
+  end
+
+  def signup
     @user = User.new
     @user_attachment = @user.attachments.build
   end
