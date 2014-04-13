@@ -20,6 +20,7 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  # header and entries on the homepage
   home: Home
   about: About
   about_description: See hackathon details
@@ -28,8 +29,33 @@ en:
   forum: Forum
   forum_description: Join our forum
 
+  # sidebar for the about page
   event_introduction: What's Hackathon
   audience: Audience
   event_details: More Info
   awards: Awards
   sponsors: Sponsors
+
+  # for the signup form
+  event_signup: Signup for the Hackathon
+
+  signup_form:
+    introduce: "With a paragraph about your experiences, interests and personal circumstances."
+    compress_files: Please compress multiple files into one first
+    confirm: Confirm and Submit
+    new: Add another one
+
+  activerecord:
+    # models:
+    #   user: User
+    attributes:
+      user:
+        name: Name
+        email: Email
+        organ: Organization or School
+        about: Introduce Yourself
+        user_type: Job Type
+        homepage: Personal Homepage
+        attachments: Personal Creations
+      attachment:
+        file: File

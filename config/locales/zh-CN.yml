@@ -13,3 +13,25 @@ zh-CN:
   awards: 奖项
   sponsors: 赞助商
 
+  event_signup: 活动报名
+
+  signup_form:
+    introduce: 用一段话介绍你的经历，兴趣和个人情况。
+    compress_files: 若有多个作品请打包成zip文件上传
+    confirm: 确认报名
+    new: 添加
+
+  activerecord:
+    # models:
+    #   user: User
+    attributes:
+      user:
+        name: 姓名
+        email: 电子邮箱
+        organ: 单位或学校
+        about: 关于你
+        user_type: 你的角色
+        homepage: 个人主页
+        attachments: 个人作品
+      attachment:
+        file: 文件
