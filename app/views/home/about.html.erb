@@ -12,50 +12,50 @@
   </div>
   <div class="col-xs-3 col-sm-3 col-md-3">
     <ul class="nav nav-pills nav-stacked">
-      <li><a href="#">活动介绍</a></li>
-      <li><a href="#">面向人群</a></li>
-      <li><a href="#">活动详情</a></li>
-      <li><a href="#">奖项</a></li>
-      <li><a href="#">赞助商</a></li>
-      <li class="active"><a href="#">报名</a></li>
+      <li><a href="#"><%= t :event_introduction %></a></li>
+      <li><a href="#"><%= t :audience %></a></li>
+      <li><a href="#"><%= t :event_details %></a></li>
+      <li><a href="#"><%= t :awards %></a></li>
+      <li><a href="#"><%= t :sponsors %></a></li>
+      <li class="active"><a href="#"><%= t :signup %></a></li>
     </ul>
   </div>
 
   <div class="col-xs-9 col-sm-9 col-md-9" id="signup">
-    <h4>活动报名</h4>
+    <h4><%= t :event_signup %></h4>
 
     <%= form_for @user, role: 'form' do |f| %>
       <div class="row">
         <div class="form-group col-xs-5">
-          <%= f.label :name, '姓名' %>
-          <%= f.text_field :name, class: 'form-control validating', placeholder: 'Name'  %>
+          <%= f.label :name %>
+          <%= f.text_field :name, class: 'form-control validating', placeholder: t('activerecord.attributes.user.name')  %>
         </div>
       </div>
 
       <div class="row">
         <div class="form-group col-xs-5">
-          <%= f.label :email, '邮箱' %>
-          <%= f.text_field :email, class: 'form-control validating', placeholder: 'Email'  %>
+          <%= f.label :email %>
+          <%= f.text_field :email, class: 'form-control validating', placeholder: t('activerecord.attributes.user.email') %>
         </div>
       </div>
 
       <div class="row">
         <div class="form-group col-xs-5">
-          <%= f.label :organ, '单位或学校' %>
-          <%= f.text_field :organ, class: 'form-control validating', placeholder: 'Organization'  %>
+          <%= f.label :organ %>
+          <%= f.text_field :organ, class: 'form-control validating', placeholder: t('activerecord.attributes.user.organ')  %>
         </div>
       </div>
 
       <div class="row">
         <div class="form-group col-xs-10">
-          <%= f.label :about, '关于你' %>
+          <%= f.label :about %>
           <%= f.text_area :about, rows: '5', class: 'form-control validating' %>
-          <span class="help-block">用一段话介绍你的经历，兴趣和个人情况。</span>
+          <span class="help-block"><%= t('signup_form.introduce') %></span>
         </div>
       </div>
 
       <div class="select-role">
-        <%= f.label :user_type, '你的角色' %>
+        <%= f.label :user_type %>
         <label class="radio">
           <%= f.radio_button :user_type, "coder", :checked => true, data: {toggle: 'radio'} %>
           程序员
@@ -81,23 +81,23 @@
 
       <div class="row personal">
         <div class="form-group col-xs-5 inputs">
-          <%= f.label :homepage, '个人主页' %>
+          <%= f.label :homepage %>
           <input type="text" name="user[homepage][0]" class='form-control'>
-          <a id="add_homepage" href="javascript:void(0)">添加</a>
+          <a id="add_homepage" href="javascript:void(0)"><%= t('signup_form.new') %></a>
         </div>
       </div>
 
       <div class="row">
         <%= f.fields_for :attachments do |af| %>
           <div class="form-group col-xs-10">
-            <%= af.label :file, '个人作品' %>
+            <%= af.label :file %>
             <%= af.file_field :file, :multiple => true, :name => "attachments[file][]" %>
-            <span class="help-block">若有多个作品请打包成zip文件上传</span>
+            <span class="help-block"><%= t('signup_form.compress_files') %></span>
           </div>
         <% end %>
       </div>
 
-      <%= f.submit "确认报名", class: 'btn btn-primary btn-wide' %>
+      <%= f.submit t('signup_form.confirm'), class: 'btn btn-primary btn-wide' %>
     <% end %>
 
   </div>
