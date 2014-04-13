@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap/alert
+//= require bootstrap/affix
 //= require flat-ui
 //= require skdslider
 //= require_tree .
