@@ -8,7 +8,7 @@ zh-CN:
   forum_description: 参与我们的讨论
 
   event_introduction: 活动介绍
-  targe: 目标与宗旨
+  target: 目标与宗旨
   schedule: 大赛日程
   price: 奖项设置
   traffic: 交通
@@ -24,6 +24,12 @@ zh-CN:
     compress_files: 若有多个作品请打包成zip文件上传
     confirm: 确认报名
     new: 添加
+    role:
+      label: 你的角色
+      coder: 程序员
+      designer: 设计师
+      pm: 产品经理
+      others: 其他
 
   activerecord:
     # models:
@@ -39,9 +45,3 @@ zh-CN:
         attachments: 个人作品
       attachment:
         file: 文件
-      role:
-        label: 你的角色
-        coder: 程序员
-        designer: 设计师
-        pm: 产品经理
-        others: 其他
