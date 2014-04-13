@@ -1,0 +1,16 @@
+<h2><%= @event.name %></h2>
+
+<strong>时间</strong>
+<p><%= @event.time %></p>
+<strong>地点</strong>
+<p><%= @event.location %></p>
+<strong>奖项</strong>
+<p>
+  <% @event.prices.each do |price| %>
+  <% end %>
+</p>
+<strong>赞助商</strong>
+<p>
+  <% @event.sponsors.each do |sponsor| %>
+  <% end %>
+</p>

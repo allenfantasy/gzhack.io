@@ -2,9 +2,9 @@
   <div class="container">
     <div class="slider">
       <ul class="sliders-list" id='slider_list'>
-        <li><img src="logo.png"></img></li>
-        <li><img src="logo.png"></img></li>
-        <li><img src="logo.png"></img></li>
+        <li><img src="/logo.png"></img></li>
+        <li><img src="/logo.png"></img></li>
+        <li><img src="/logo.png"></img></li>
       </ul>
     </div>
   </div>
@@ -14,41 +14,41 @@
   <div class='inner'>
     <div class="entry">
       <div class="ih-item circle effect4 left_to_right">
-        <a href="/about">
+        <%= link_to about_path do %>
           <div class="img">
-            <img src='about.png' />
+            <img src='/about.png' />
           </div>
           <div class="info">
-            <h3>Heading Here</h3>
-            <p>Description goes here.</p>
+            <h3><%= t :about %></h3>
+            <p><%= t :about_description %></p>
           </div>
-        </a>
+        <% end %>
       </div>
     </div>
     <div class='entry'>
       <div class="ih-item circle effect4 top_to_bottom">
-        <a href="/signup">
+        <%= link_to signup_path do %>
           <div class="img">
-            <img src='signup.png' />
+            <img src='/signup.png' />
           </div>
           <div class="info">
-            <h3>Heading Here</h3>
-            <p>Description goes here.</p>
+            <h3><%= t :signup %></h3>
+            <p><%= t :signup_description %></p>
           </div>
-        </a>
+        <% end %>
       </div>
     </div>
     <div class="entry">
       <div class="ih-item circle effect4 right_to_left">
-        <a href="#">
+        <%= link_to '#forum' do %>
           <div class="img">
-            <img src='forum.png' />
+            <img src='/forum.png' />
           </div>
           <div class="info">
-            <h3>Heading Here</h3>
-            <p>Description goes here.</p>
+            <h3><%= t :forum %></h3>
+            <p><%= t :forum_description %></p>
           </div>
-        </a>
+        <% end %>
       </div>
     </div>
   </div>

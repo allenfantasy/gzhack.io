@@ -1,0 +1,28 @@
+<%= form_for [:cpanel, @event] do |f| %>
+  <div class="field">
+    <%= f.label :name, '活动名称' %>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :location, '活动地点' %>
+    <%= f.text_field :location %>
+  </div>
+  <div class="field">
+    <%= f.label :time, '活动时间' %>
+    <%= f.text_field :time %>
+  </div>
+  <div class="field">
+    <!-- TODO: rich-text editor -->
+    <%= f.label :body, '活动介绍' %>
+    <%= f.text_area :body %>
+  </div>
+  <div class="field">
+    <!-- TODO: rich-text editor -->
+    <%= f.label :prices, '奖项设置' %>
+    <%= f.text_area :prices %>
+  </div>
+  <div>
+    <%= f.submit "确定" %>
+  </div>
+
+<% end %>

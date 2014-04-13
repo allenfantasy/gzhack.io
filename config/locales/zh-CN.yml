@@ -1,0 +1,47 @@
+zh-CN:
+  home: 首页
+  about: 关于
+  about_description: 查看创客马拉松详情
+  signup: 报名
+  signup_description: 参加我们的创客马拉松
+  forum: 论坛
+  forum_description: 参与我们的讨论
+
+  event_introduction: 活动介绍
+  targe: 目标与宗旨
+  schedule: 大赛日程
+  price: 奖项设置
+  traffic: 交通
+  audience: 面向人群
+  event_details: 活动详情
+  awards: 奖项
+  sponsors: 赞助商
+
+  event_signup: 活动报名
+
+  signup_form:
+    introduce: 用一段话介绍你的经历，兴趣和个人情况。
+    compress_files: 若有多个作品请打包成zip文件上传
+    confirm: 确认报名
+    new: 添加
+
+  activerecord:
+    # models:
+    #   user: User
+    attributes:
+      user:
+        name: 姓名
+        email: 电子邮箱
+        organ: 单位或学校
+        about: 关于你
+        user_type: 你的角色
+        homepage: 个人主页
+        attachments: 个人作品
+      attachment:
+        file: 文件
+      role:
+        label: 你的角色
+        coder: 程序员
+        designer: 设计师
+        pm: 产品经理
+        others: 其他

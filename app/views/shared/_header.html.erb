@@ -1,6 +1,6 @@
 <div class="row header">
   <div class="col-xs-3 col-md-3 col-sm-3">
-    <img src="logo.png" width="206" height="100" alt="2014年首届广州创客马拉松">
+    <img src="/logo.png" width="206" height="100" alt="2014年首届广州创客马拉松">
   </div>
   <div class="col-xs-9 col-md-9 col-sm-9">
     <nav class="navbar navbar-default" role="navigation">
@@ -11,10 +11,10 @@
       </div>
       <div class="collapse navbar-collapse" id="navbar-collapse-01">
         <ul class="nav navbar-nav">
-          <li><a href="/home">首页</a></li>
-          <li class="<%= 'active' if request.fullpath == '/about' %>"><a href="/about">关于</a></li>
-          <li class="<%= 'active' if request.fullpath == '/signup' %>"><a href="/signup">报名</a></li>
-          <li><a href="#">论坛</a></li>
+          <li><%= link_to t(:home), home_path %></li>
+          <li><%= link_to t(:about), about_path %></li>
+          <li><%= link_to t(:signup), signup_path %></li>
+          <li><%= link_to t(:forum), '#forum' %></li>
         </ul>
       </div>
     </nav>
