@@ -13,11 +13,11 @@ class UsersController < ApplicationController
         @attachment = @user.attachments.create!(:file => a, :user_id => @user.id)
       end if params[:attachments]
       flash[:success] = '报名成功！'
-      redirect_to about_path
+      redirect_to signup_path
     else
 
       logger.info @user.errors.full_messages
-      redirect_to about_path, :alert => "报名失败！<br>#{@user.errors.full_messages.join('<br>')}"
+      redirect_to signup_path, :alert => "报名失败！<br>#{@user.errors.full_messages.join('<br>')}"
     end
   end
 

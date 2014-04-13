@@ -8,6 +8,10 @@ zh-CN:
   forum_description: 参与我们的讨论
 
   event_introduction: 活动介绍
+  targe: 目标与宗旨
+  schedule: 大赛日程
+  price: 奖项设置
+  traffic: 交通
   audience: 面向人群
   event_details: 活动详情
   awards: 奖项
@@ -35,3 +39,9 @@ zh-CN:
         attachments: 个人作品
       attachment:
         file: 文件
+      role:
+        label: 你的角色
+        coder: 程序员
+        designer: 设计师
+        pm: 产品经理
+        others: 其他

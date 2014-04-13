@@ -31,6 +31,10 @@ en:
 
   # sidebar for the about page
   event_introduction: What's Hackathon
+  target: Target & purpose
+  schedule: Schedule
+  price: Price
+  traffic: Traffic
   audience: Audience
   event_details: More Info
   awards: Awards
@@ -44,6 +48,12 @@ en:
     compress_files: Please compress multiple files into one first
     confirm: Confirm and Submit
     new: Add another one
+    role:
+      label: Your Role
+      coder: Coder
+      designer: Designer
+      pm: Product Manager
+      others: Others
 
   activerecord:
     # models:
@@ -58,4 +68,4 @@ en:
         homepage: Personal Homepage
         attachments: Personal Creations
       attachment:
-        file: File
+        file: Code works
