@@ -28,34 +28,33 @@
       <div class="row">
         <div class="form-group col-xs-5">
           <%= f.label :name, '姓名' %>
-          <%= f.text_field :name, class: 'form-control', placeholder: 'Name'  %>
+          <%= f.text_field :name, class: 'form-control validating', placeholder: 'Name'  %>
         </div>
       </div>
 
       <div class="row">
         <div class="form-group col-xs-5">
           <%= f.label :email, '邮箱' %>
-          <%= f.text_field :email, class: 'form-control', placeholder: 'Email'  %>
+          <%= f.text_field :email, class: 'form-control validating', placeholder: 'Email'  %>
         </div>
       </div>
 
       <div class="row">
         <div class="form-group col-xs-5">
           <%= f.label :organ, '单位或学校' %>
-          <%= f.text_field :organ, class: 'form-control', placeholder: 'Organization'  %>
+          <%= f.text_field :organ, class: 'form-control validating', placeholder: 'Organization'  %>
         </div>
       </div>
 
       <div class="row">
         <div class="form-group col-xs-10">
           <%= f.label :about, '关于你' %>
-          <%= f.text_area :about, rows: '5', class: 'form-control' %>
+          <%= f.text_area :about, rows: '5', class: 'form-control validating' %>
           <span class="help-block">用一段话介绍你的经历，兴趣和个人情况。</span>
         </div>
       </div>
 
       <div class="select-role">
-        <label for="select_role">你的角色</label>
         <%= f.label :user_type, '你的角色' %>
         <label class="radio">
           <%= f.radio_button :user_type, "coder", :checked => true, data: {toggle: 'radio'} %>

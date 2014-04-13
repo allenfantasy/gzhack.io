@@ -18,7 +18,7 @@
 //= require_tree .
 
 $(document).ready(function() {
-  if ($('#home section.about').length > 0) {
+  if ($('#home .about').length > 0) {
     var $inputs = $('#signup form#new_user .personal .inputs');
     $inputs.find('#add_homepage').click(function() {
       $('<input></input>', {
