@@ -14,6 +14,8 @@ gem 'turbolinks'
 gem 'mini_magick'
 gem 'carrierwave'
 gem 'spreadsheet'
+#gem "resque", "~> 2.0.0.pre.1", github: "resque/resque"
+gem 'resque'
 
 gem 'jbuilder', '~> 1.2'
 

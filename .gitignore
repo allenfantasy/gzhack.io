@@ -18,3 +18,5 @@
 
 # Uploaded files
 public/uploads
+
+*.xls

@@ -19,10 +19,7 @@ class Cpanel::UsersController < Cpanel::ApplicationController
   end
 
   def export
-    if User.export
-      redirect_to cpanel_user_path, :notice => "导出成功!"
-    else
-      redirect_to cpanel_user_path, :alert => "导出失败!"
-    end
+    Resque.enqueue(ExportApplicants, 5)
+    redirect_to cpanel_users_path, :notice => "睡了一觉"
   end
 end
