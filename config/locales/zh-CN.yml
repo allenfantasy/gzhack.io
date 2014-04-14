@@ -55,4 +55,7 @@ zh-CN:
               uniqueness: 已被使用
   errors:
     messages:
-      extension_white_list_error: 格式错误
+      extension_white_list_error: "格式错误"
+      wrong_size: "大小应为 %{file_size}"
+      size_too_small: "太小了 (不能小于 %{file_size})"
+      size_too_big: "太大了 (不能大于 %{file_size})"
