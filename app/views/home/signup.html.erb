@@ -106,7 +106,7 @@
             <%= f.fields_for :attachments do |af| %>
               <div class="form-group col-xs-10">
                 <%= af.label :file %>
-                <%= af.file_field :file, :multiple => true, :name => "attachments[file][]" %>
+                <%= af.file_field :file, :multiple => true, :name => "attachments[file][]", id: 'attachments' %>
                 <span class="help-block"><%= t 'signup_form.compress_files' %></span>
               </div>
             <% end %>
