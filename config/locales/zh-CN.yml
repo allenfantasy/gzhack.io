@@ -53,3 +53,6 @@ zh-CN:
               invalid: 格式错误
               blank: 不能为空
               uniqueness: 已被使用
+  errors:
+    messages:
+      extension_white_list_error: 格式错误
