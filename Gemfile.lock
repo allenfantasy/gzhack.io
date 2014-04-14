@@ -95,6 +95,7 @@ GEM
     pry-rails (0.3.2)
       pry (>= 0.9.10)
     rack (1.5.2)
+    rack-noie (1.0)
     rack-test (0.6.2)
       rack (>= 1.0)
     rails (4.0.4)
@@ -170,6 +171,7 @@ DEPENDENCIES
   mini_magick
   pg
   pry-rails
+  rack-noie
   rails (= 4.0.4)
   rvm-capistrano
   sass-rails (~> 4.0.2)
