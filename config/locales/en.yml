@@ -74,4 +74,6 @@ en:
         user:
           attributes:
             email:
-              invalid: invalid format
+              invalid: has invalid format
+              blank: should not be blank
+              uniqueness: has been taken

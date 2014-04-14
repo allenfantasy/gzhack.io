@@ -51,3 +51,5 @@ zh-CN:
           attributes:
             email:
               invalid: 格式错误
+              blank: 不能为空
+              uniqueness: 已被使用
