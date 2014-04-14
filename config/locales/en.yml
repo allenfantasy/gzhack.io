@@ -41,7 +41,7 @@ en:
   sponsors: Sponsors
 
   # for the signup form
-  event_signup: Signup for the Hackathon
+  event_signup: Signup
 
   signup_form:
     introduce: "With a paragraph about your experiences, interests and personal circumstances."
@@ -68,7 +68,7 @@ en:
         homepage: Personal Homepage
         attachments: Personal Creations
       attachment:
-        file: Code works
+        file: Your Works
     errors:
       models:
         user:
