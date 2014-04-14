@@ -1,4 +1,4 @@
-.about {
+.about, .signup {
   margin-bottom: 100px;
 }
 .help-block {
@@ -8,4 +8,18 @@
   background-color: #fcf8e3;
   border-color: #faebcc;
   color: #f1c40f;
+}
+
+.about #intro {
+  blockquote {
+    margin-top: 25px;
+  }
+  blockquote p {
+    font-size: 16px;
+    margin-bottom: 15px;
+  }
+}
+
+.about ul {
+  padding-left: 20px;
 }
