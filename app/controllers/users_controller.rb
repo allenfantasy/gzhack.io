@@ -7,11 +7,22 @@ class UsersController < ApplicationController
 
     @user = User.new(user_params)
 
+    blacklist = %w(js sh)
+
     if @user.save
-      params[:attachments]['file'].each do |a|
-        @attachment = @user.attachments.create!(:file => a, :user_id => @user.id)
-      end if params[:attachments]
-      flash[:success] = '报名成功！'
+      begin
+        params[:attachments]['file'].each do |a|
+          @attachment = @user.attachments.create!(:file => a, :user_id => @user.id)
+        end if params[:attachments]
+        flash[:success] = '报名成功！'
+      rescue ActiveRecord::RecordInvalid => e
+        @user.delete
+        flash[:alert] = "报名失败！<br>#{e.record.errors.full_messages.join('<br >')}"
+        ftype = params[:attachments][:file][0].original_filename
+        blacklist.each do |key|
+          flash[:alert] = '报名失败！<br>黑客大大求别黑TuT' if /\.#{key}$/ =~ ftype
+        end
+      end
       redirect_to signup_path
     else
 

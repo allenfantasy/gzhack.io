@@ -37,7 +37,7 @@ zh-CN:
     attributes:
       user:
         name: 姓名
-        email: 电子邮箱
+        email: 邮箱
         organ: 单位或学校
         about: 关于你
         user_type: 你的角色
@@ -45,3 +45,14 @@ zh-CN:
         attachments: 个人作品
       attachment:
         file: 文件
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              invalid: 格式错误
+              blank: 不能为空
+              uniqueness: 已被使用
+  errors:
+    messages:
+      extension_white_list_error: 格式错误
