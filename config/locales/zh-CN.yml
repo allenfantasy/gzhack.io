@@ -50,4 +50,4 @@ zh-CN:
         user:
           attributes:
             email:
-              invalid: '格式错误'
+              invalid: 格式错误
