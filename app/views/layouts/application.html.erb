@@ -6,7 +6,7 @@
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
-<body id="<%= controller_name %>">
+<body id="<%= controller_name %>" data-spy="scroll" data-target=".navigation">
 
 <div class="container-fluid main">
   <%= yield %>

@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require bootstrap/alert
 //= require bootstrap/affix
+//= require bootstrap/scrollspy
 //= require flat-ui
 //= require skdslider
 //= require_tree .
