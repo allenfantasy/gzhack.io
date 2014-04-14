@@ -22,13 +22,15 @@ class UsersController < ApplicationController
         blacklist.each do |key|
           flash[:alert] = '报名失败！<br>黑客大大求别黑TuT' if /\.#{key}$/ =~ ftype
         end
+        return render_signup
       end
-      redirect_to signup_path
     else
-
       logger.info @user.errors.full_messages
-      redirect_to signup_path, :alert => "报名失败！<br>#{@user.errors.full_messages.join('<br>')}"
+      flash[:alert] = "报名失败！<br>#{@user.errors.full_messages.join('<br>')}"
+      return render_signup
     end
+
+    redirect_to signup_path
   end
 
   private
@@ -36,5 +38,9 @@ class UsersController < ApplicationController
     params.require(:user).permit(:name, :email, :organ, :homepage, :user_type, :about, :attachments_attributes => [:id, :user_id, :file])
   end
 
+  def render_signup
+    @user_attachment = @attachment || @user.attachments.build
+    render 'home/signup'
+  end
 end
 
