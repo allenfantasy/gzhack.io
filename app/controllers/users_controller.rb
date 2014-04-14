@@ -3,9 +3,8 @@ class UsersController < ApplicationController
   def create
     # deal with params
     params[:user][:homepage] = params[:user][:homepage].values.join(" ")
-    if params[:user][:user_type] == 'others'
-      params[:user][:user_type] = params[:other_type]
-    end
+    params[:user][:user_type] ||= params[:other_type] unless User::TYPES.keys.include? params[:user][:user_type]
+
     @user = User.new(user_params)
 
     if @user.save
