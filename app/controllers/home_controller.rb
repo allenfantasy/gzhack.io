@@ -1,6 +1,8 @@
 class HomeController < ApplicationController
+  has_mobile_fu
+
   def index
-    render layout: 'homepage'
+    render layout: 'homepage' unless is_mobile_device?
   end
 
   def detail
