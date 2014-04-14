@@ -21,6 +21,11 @@
   }
 }
 
-.about ul {
-  padding-left: 20px;
+.about, .signup {
+  .navigation ul {
+    text-align: right;
+  }
+  .affix, .affix-top {
+    position: fixed !important;
+  }
 }
