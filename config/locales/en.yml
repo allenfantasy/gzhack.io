@@ -69,3 +69,11 @@ en:
         attachments: Personal Creations
       attachment:
         file: Code works
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              invalid: has invalid format
+              blank: should not be blank
+              uniqueness: has been taken
