@@ -22,7 +22,14 @@
 
   <div class="col-xs-9 col-sm-9 col-md-9">
     <%= render 'shared/header' %>
-    <% %w{intro target schedule price traffic}.each do |sec| %>
+    <%
+      secs = if I18n.locale == I18n.default_locale
+               %w{intro target schedule price traffic}
+             else
+               %w{intro_en target_en schedule_en price_en traffic_en}
+             end
+    %>
+    <% secs.each do |sec| %>
       <div id="<%= sec %>">
         <%= render sec %>
       </div>
