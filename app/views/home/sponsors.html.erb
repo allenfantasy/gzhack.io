@@ -1,0 +1,30 @@
+<div class="row about">
+
+  <div class="col-xs-3 col-sm-3 col-md-3 navigation">
+    <div class="affix" data-spy="affix" data-offset-top="60" data-offset-bottom="200">
+      <img src="/logo.png" width="206" alt="2014年首届广州创客马拉松">
+      <ul class="nav nav-pills nav-stacked">
+        <li><a href="#intro"><%= t :event_introduction %></a></li>
+        <li><a href="#target"><%= t :goals %></a></li>
+        <li><a href="#schedule"><%= t :schedule %></a></li>
+        <li><a href="#award"><%= t :award %></a></li>
+        <li><a href="#traffic"><%= t :traffic %></a></li>
+        <li>
+          <% if I18n.locale == I18n.default_locale %>
+            <%= link_to "English", :locale => 'en' %>
+          <% else %>
+            <%= link_to "中文", :locale => 'zh-CN' %>
+          <% end %>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="col-xs-9 col-sm-9 col-md-9">
+    <%= render 'shared/header' %>
+    <div class="col-xs-12 col-sm-12 col-md-12 sponsors">
+    </div>
+  </div>
+
+</div>
+

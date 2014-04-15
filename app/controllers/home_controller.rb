@@ -15,4 +15,13 @@ class HomeController < ApplicationController
     @user = User.new
     @user_attachment = @user.attachments.build
   end
+
+  def sponsors
+  end
+
+  def partners
+  end
+
+  def colleges
+  end
 end
