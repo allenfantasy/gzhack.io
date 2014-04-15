@@ -25,3 +25,10 @@
     </tr>
   <% end %>
 </table>
+
+<h4>报名信息导出</h4>
+<%= form_tag export_cpanel_users_path do %>
+  <%= label_tag '请输入接受报名表的邮箱：' %>
+  <%= text_field_tag 'email' %>
+  <%= submit_tag "确定" %>
+<% end %>
