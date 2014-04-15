@@ -37,9 +37,11 @@ namespace :deploy do
   task :default do
     update_code
     create_symlink
+    resque.stop
     unicorn.stop
     db.migrate
     unicorn.start
+    resque.start
   end
   task :start do
     nginx.start
@@ -66,17 +68,6 @@ namespace :deploy do
   end
   after "deploy:finalize_update", "deploy:symlink_config"
 
-  namespace :resque do
-    desc "Start Resque"
-    task :start, roles: :app do
-      run "cd #{current_path} RAILS_ENV=production PIDFILE=#{pid_dir}/resque.pid QUEUE=export BACKGROUND=yes bundle exec rake environment resque:work"
-    end
-
-    desc "Stop Resque"
-    task :stop, roles: :app do
-      run "kill `cat #{pid_dir}/resque.pid`"
-    end
-  end
 end
 
 server "173.255.208.69", :web, :app, :db, primary: true
