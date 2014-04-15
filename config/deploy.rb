@@ -37,9 +37,11 @@ namespace :deploy do
   task :default do
     update_code
     create_symlink
+    resque.stop
     unicorn.stop
     db.migrate
     unicorn.start
+    resque.start
   end
   task :start do
     nginx.start
