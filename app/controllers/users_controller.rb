@@ -3,22 +3,34 @@ class UsersController < ApplicationController
   def create
     # deal with params
     params[:user][:homepage] = params[:user][:homepage].values.join(" ")
-    if params[:user][:user_type] == 'others'
-      params[:user][:user_type] = params[:other_type]
-    end
+    params[:user][:user_type] ||= params[:other_type] unless User::TYPES.keys.include? params[:user][:user_type]
+
     @user = User.new(user_params)
 
-    if @user.save
-      params[:attachments]['file'].each do |a|
-        @attachment = @user.attachments.create!(:file => a, :user_id => @user.id)
-      end if params[:attachments]
-      flash[:success] = '报名成功！'
-      redirect_to about_path
-    else
+    blacklist = %w(js sh)
 
+    if @user.save
+      begin
+        params[:attachments]['file'].each do |a|
+          @attachment = @user.attachments.create!(:file => a, :user_id => @user.id)
+        end if params[:attachments]
+        flash[:success] = '报名成功！'
+      rescue ActiveRecord::RecordInvalid => e
+        @user.delete
+        flash[:alert] = "报名失败！<br>#{e.record.errors.full_messages.join('<br >')}"
+        ftype = params[:attachments][:file][0].original_filename
+        blacklist.each do |key|
+          flash[:alert] = '报名失败！<br>黑客大大求别黑TuT' if /\.#{key}$/ =~ ftype
+        end
+        return render_signup
+      end
+    else
       logger.info @user.errors.full_messages
-      redirect_to about_path, :alert => "报名失败！<br>#{@user.errors.full_messages.join('<br>')}"
+      flash[:alert] = "报名失败！<br>#{@user.errors.full_messages.join('<br>')}"
+      return render_signup
     end
+
+    redirect_to signup_path
   end
 
   private
@@ -26,5 +38,9 @@ class UsersController < ApplicationController
     params.require(:user).permit(:name, :email, :organ, :homepage, :user_type, :about, :attachments_attributes => [:id, :user_id, :file])
   end
 
+  def render_signup
+    @user_attachment = @attachment || @user.attachments.build
+    render 'home/signup'
+  end
 end
 

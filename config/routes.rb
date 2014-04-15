@@ -1,14 +1,17 @@
 require 'resque/server'
 
 Gzhack::Application.routes.draw do
-  root 'home#index'
+  scope '(:locale)', locale: /en|zh-CN/ do
+    # You can have the root of your site routed with "root"
+    root 'home#index'
 
-  get '/event' => 'home#detail'
-  get '/about' => 'home#about'
-  get '/signup' => 'home#signup'
-  get '/home' => 'home#index'
+    get '/event' => 'home#detail'
+    get '/about' => 'home#about'
+    get '/signup' => 'home#signup'
+    get '/home' => 'home#index'
 
-  post '/users' => 'users#create'
+    post '/users' => 'users#create'
+  end
 
   # Cpanel
 

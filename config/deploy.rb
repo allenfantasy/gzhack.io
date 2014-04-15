@@ -1,8 +1,8 @@
 require "rvm/capistrano"
 
-set :bundle_cmd, "/home/deployer/.rvm/gems/ruby-2.1.0/bin/bundle"
-set :bundle_dir, '/home/deployer/.rvm/gems/ruby-2.1.0'
-set :rvm_ruby_version, 'ruby-2.1.0'
+set :bundle_cmd, "/home/deploy/.rvm/gems/ruby-2.1.1/bin/bundle"
+set :bundle_dir, '/home/deploy/.rvm/gems/ruby-2.1.1'
+set :rvm_ruby_version, 'ruby-2.1.1'
 require "bundler/capistrano"
 
 load "config/recipes/base"
@@ -13,15 +13,15 @@ load "config/recipes/postgresql"
 load "config/recipes/database"
 load "config/recipes/monit"
 
-set :application, "gzhack" # NOTICE! CHANGE ME WITH APPLICATION NAME!
-set :user, "deployer"
+set :application, "gzhack"
+set :user, "deploy"
 set :deploy_to, "/home/#{user}/apps/#{application}"
 set :deploy_via, :remote_cache
 set :use_sudo, false
 set :nginx_port, 80 # default port for nginx is 80. CHANGE THIS IF NEEDED
 
 set :scm, :git
-set :repository,  "git@github.com:allenfantasy/gzhack.io.git" # NOTICE! CHANGE ME WITH REPO URL!
+set :repository,  "git@github.com:allenfantasy/gzhack.io.git"
 set :branch, "master"
 
 set :pid_dir, "#{shared_path}/pids"
@@ -79,4 +79,4 @@ namespace :deploy do
   end
 end
 
-server "115.29.192.209", :web, :app, :db, primary: true
+server "173.255.208.69", :web, :app, :db, primary: true

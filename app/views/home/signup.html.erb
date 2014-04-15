@@ -1,0 +1,120 @@
+<!-- sidebar -->
+<div class="row signup">
+
+  <div class="col-xs-3 col-sm-3 col-md-3 navigation">
+    <div class="affix" data-spy="affix" data-offset-top="60" data-offset-bottom="200">
+      <img src="/logo.png" width="206" alt="2014年首届广州创客马拉松">
+      <ul class="nav nav-pills nav-stacked">
+        <li><a href="#rules"><%= t :rules %></a></li>
+        <li><a href="#signup"><%= t :event_signup %></a></li>
+
+        <li>
+          <% if I18n.locale == I18n.default_locale %>
+            <%= link_to "English", :locale => 'en' %>
+          <% else %>
+            <%= link_to "中文", :locale => 'zh-CN' %>
+          <% end %>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="col-xs-9 col-sm-9 col-md-9">
+    <%= render 'shared/header' %>
+
+      <div class="col-xs-12 col-sm-12 col-md-12">
+        <% flash.each do |type, message| %>
+          <div class="alert alert-<%= type %> alert-dismissable">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            <%== message %>
+          </div>
+        <% end %>
+      </div>
+
+      <div id="rules">
+        <h4><%= t :rules %></h4>
+          <%= render I18n.locale == I18n.default_locale ? "home/rules" : "home/rules_en" %>
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-12" id="signup">
+
+        <h4><%= t :event_signup %></h4>
+
+        <%= form_for @user, role: 'form' do |f| %>
+          <div class="row">
+            <div class="form-group col-xs-5">
+              <%= f.label :name %>
+              <%= f.text_field :name, class: 'form-control validating', placeholder: 'Name'  %>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="form-group col-xs-5">
+              <%= f.label :email %>
+              <%= f.text_field :email, class: 'form-control validating', placeholder: 'Email'  %>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="form-group col-xs-5">
+              <%= f.label :organ %>
+              <%= f.text_field :organ, class: 'form-control validating', placeholder: 'Organization'  %>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="form-group col-xs-10">
+              <%= f.label :about %>
+              <%= f.text_area :about, rows: '5', class: 'form-control validating' %>
+              <span class="help-block"><%= t 'signup_form.introduce' %></span>
+            </div>
+          </div>
+
+          <div class="select-role">
+            <%= f.label :user_type, t('signup_form.role.label') %>
+            <label class="radio">
+              <%= f.radio_button :user_type, "coder", :checked => true, data: {toggle: 'radio'} %>
+              <%= t 'signup_form.role.coder' %>
+            </label>
+            <label class="radio">
+              <%= f.radio_button :user_type, "designer", data: {toggle: 'radio'} %>
+              <%= t 'signup_form.role.designer' %>
+            </label>
+            <label class="radio">
+              <%= f.radio_button :user_type, "pm", data: {toggle: 'radio'} %>
+              <%= t 'signup_form.role.pm' %>
+            </label>
+            <label class="radio">
+              <%= f.radio_button :user_type, "others", data: {toggle: 'radio'} %>
+              <%= t 'signup_form.role.others' %>
+            </label>
+            <div class="row">
+              <div class="form-group col-xs-5">
+                <%= text_field_tag :other_type, '', class: 'form-control', placeholder: 'Role' %>
+              </div>
+            </div>
+          </div>
+
+          <div class="row personal">
+            <div class="form-group col-xs-5 inputs">
+              <%= f.label :homepage %>
+              <input type="text" name="user[homepage][0]" class='form-control'>
+              <a id="add_homepage" href="javascript:void(0)"><%= t 'signup_form.new' %></a>
+            </div>
+          </div>
+
+          <div class="row">
+            <%= f.fields_for :attachments do |af| %>
+              <div class="form-group col-xs-10">
+                <%= af.label :file %>
+                <%= af.file_field :file, :multiple => true, :name => "attachments[file][]", id: 'attachments' %>
+                <span class="help-block"><%= t 'signup_form.compress_files' %></span>
+              </div>
+            <% end %>
+          </div>
+
+          <%= f.submit t('signup_form.confirm'), class: 'btn btn-primary btn-wide' %>
+        <% end %>
+
+      </div>
+  </div>
+</div>

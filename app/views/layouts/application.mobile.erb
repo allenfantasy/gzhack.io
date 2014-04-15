@@ -3,13 +3,13 @@
 <head>
   <title>2014广州创客马拉松 Guangzhou Hackathon 2014</title>
   <meta name="keywords" content="2014广州创客马拉松">
-  <%= stylesheet_link_tag    "application", media: "all" %>
-  <%= javascript_include_tag "application" %>
+  <meta name='viewport' content='width=device-width'>
+  <%= stylesheet_link_tag "application.css", media: "all" %>
   <%= csrf_meta_tags %>
 </head>
-<body id="<%= controller_name %>" data-spy="scroll" data-target=".navigation">
+<body id="<%= controller_name %>" class='mobile'>
 
-<div class="container-fluid main">
+<div class="">
   <%= yield %>
 </div>
 

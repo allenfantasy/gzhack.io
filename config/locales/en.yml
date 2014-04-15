@@ -20,4 +20,105 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  # header and entries on the homepage
+  home: Home
+  about: About
+  about_description: See hackathon details
+  signup: Sign up
+  signup_description: Join our hackathon
+  forum: Forum
+  forum_description: Join our forum
+
+  # sidebar for the about page
+  event_introduction: What's Hackathon
+  target: Target & purpose
+  schedule: Schedule
+  price: Price
+  traffic: Traffic
+  audience: Audience
+  event_details: More Info
+  awards: Awards
+  sponsors: Sponsors
+  rules: Rules
+
+  # for the signup form
+  event_signup: Signup
+
+  signup_form:
+    introduce: "With a paragraph about your experiences, interests and personal circumstances."
+    compress_files: Please compress multiple files into one first
+    confirm: Confirm and Submit
+    new: Add another one
+    role:
+      label: Your Role
+      coder: Coder
+      designer: Designer
+      pm: Product Manager
+      others: Others
+
+  activerecord:
+    # models:
+    #   user: User
+    attributes:
+      user:
+        name: Name
+        email: Email
+        organ: Organization or School
+        about: Introduce Yourself
+        user_type: Job Type
+        homepage: Personal Homepage
+        attachments: Personal Creations
+      attachment:
+        file: Your Works
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              invalid: has invalid format
+              blank: should not be blank
+              uniqueness: has been taken
+  errors:
+    format: "%{attribute} %{message}"
+    messages:
+      extension_white_list_error: "invalid file extension"
+      wrong_size: "is the wrong size (should be %{file_size})"
+      size_too_small: "is too small (should be bigger than %{file_size})"
+      size_too_big: "is too big (should be smaller than %{file_size})"
+      accepted: "must be accepted"
+      blank: "can't be blank"
+      present: "must be blank"
+      confirmation: "doesn't match %{attribute}"
+      empty: "can't be empty"
+      equal_to: "must be equal to %{count}"
+      even: "must be even"
+      exclusion: "is reserved"
+      greater_than: "must be greater than %{count}"
+      greater_than_or_equal_to: "must be greater than or equal to %{count}"
+      inclusion: "is not included in the list"
+      invalid: "is invalid"
+      less_than: "must be less than %{count}"
+      less_than_or_equal_to: "must be less than or equal to %{count}"
+      not_a_number: "is not a number"
+      not_an_integer: "must be an integer"
+      odd: "must be odd"
+      record_invalid: "Validation failed: %{errors}"
+      restrict_dependent_destroy:
+        one: "Cannot delete record because a dependent %{record} exists"
+        many: "Cannot delete record because dependent %{record} exist"
+      taken: "has already been taken"
+      too_long:
+        one: "is too long (maximum is 1 character)"
+        other: "is too long (maximum is %{count} characters)"
+      too_short:
+        one: "is too short (minimum is 1 character)"
+        other: "is too short (minimum is %{count} characters)"
+      wrong_length:
+        one: "is the wrong length (should be 1 character)"
+        other: "is the wrong length (should be %{count} characters)"
+      other_than: "must be other than %{count}"
+    template:
+      body: "There were problems with the following fields:"
+      header:
+        one: "1 error prohibited this %{model} from being saved"
+        other: "%{count} errors prohibited this %{model} from being saved"
