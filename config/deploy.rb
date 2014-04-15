@@ -12,6 +12,7 @@ load "config/recipes/unicorn"
 load "config/recipes/postgresql"
 load "config/recipes/database"
 load "config/recipes/monit"
+load "config/recipes/resque"
 
 set :application, "gzhack"
 set :user, "deploy"
