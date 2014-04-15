@@ -31,9 +31,9 @@ en:
 
   # sidebar for the about page
   event_introduction: What's Hackathon
-  target: Target & purpose
+  goals: Goals
   schedule: Schedule
-  price: Price
+  award: Award
   traffic: Traffic
   audience: Audience
   event_details: More Info
