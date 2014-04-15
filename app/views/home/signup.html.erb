@@ -10,9 +10,9 @@
 
         <li>
           <% if I18n.locale == I18n.default_locale %>
-            <%= link_to "English", :locale => 'en' %>
+            <%= link_to "English", signup_path(:locale => 'en') %>
           <% else %>
-            <%= link_to "中文", :locale => 'zh-CN' %>
+            <%= link_to "中文", signup_path(:locale => 'zh-CN') %>
           <% end %>
         </li>
       </ul>
