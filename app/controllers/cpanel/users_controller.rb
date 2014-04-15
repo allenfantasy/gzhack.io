@@ -19,7 +19,7 @@ class Cpanel::UsersController < Cpanel::ApplicationController
   end
 
   def export
-    Resque.enqueue(ExportApplicants, 5)
-    redirect_to cpanel_users_path, :notice => "睡了一觉"
+    Resque.enqueue(ExportApplicants, params[:email])
+    redirect_to cpanel_users_path, :notice => "正在生成报名表格，完成后将发送一封邮件到你指定的邮箱"
   end
 end

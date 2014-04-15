@@ -1,8 +1,10 @@
+# coding: utf-8
 require 'spreadsheet'
 
-namespace :applicant do
-  desc "Export all applicants for 2014 Hackathon"
-  task :export => :environment do
+class ExportApplicants
+  @queue = :export
+
+  def self.perform(email)
     users = User.all
     f = Spreadsheet::Workbook.new
     sheet = f.create_worksheet :name => "sheet1"
@@ -13,5 +15,8 @@ namespace :applicant do
     end
 
     f.write './applicants.xls'
+
+    # send email
+    UserMailer.export_finished_mail(email).deliver
   end
 end

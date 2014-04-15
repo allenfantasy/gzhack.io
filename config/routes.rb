@@ -1,3 +1,5 @@
+require 'resque/server'
+
 Gzhack::Application.routes.draw do
   root 'home#index'
 
@@ -14,7 +16,7 @@ Gzhack::Application.routes.draw do
     resources :events
     resources :users do
       collection do
-        get :export
+        post :export
       end
     end
 
