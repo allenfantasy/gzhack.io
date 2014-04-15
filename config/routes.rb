@@ -9,9 +9,9 @@ Gzhack::Application.routes.draw do
     get '/about' => 'home#about'
     get '/signup' => 'home#signup'
     get '/home' => 'home#index'
-    get '/sponsors' => 'home#sponsors'
+    #get '/sponsors' => 'home#sponsors'
     get '/partners' => 'home#partners'
-    get '/colleges' => 'home#colleges'
+    #get '/colleges' => 'home#colleges'
 
     post '/users' => 'users#create'
   end
