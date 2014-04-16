@@ -17,6 +17,8 @@ gem 'spreadsheet'
 #gem "resque", "~> 2.0.0.pre.1", github: "resque/resque"
 gem 'resque'
 
+gem 'http_accept_language'
+
 gem 'jbuilder', '~> 1.2'
 
 gem 'flat-ui-sass', github: 'wingrunr21/flat-ui-sass'
