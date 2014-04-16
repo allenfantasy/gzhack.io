@@ -13,6 +13,8 @@ load "config/recipes/postgresql"
 load "config/recipes/database"
 load "config/recipes/monit"
 load "config/recipes/resque"
+load "config/recipes/sitemap"
+
 
 set :application, "gzhack"
 set :user, "deploy"
