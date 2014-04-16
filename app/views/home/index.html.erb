@@ -1,13 +1,17 @@
-<section id="nav" style='background: #000; height: 50px;'>
+<% content_for :meta do %>
+  <link rel="canonical" href="http://gzhack.io/home" />
+<% end %>
 
+
+<section id="nav" style='background: #000; height: 50px;'>
 </section>
 <section id='logo'>
   <div class="container">
     <div class="slider">
       <ul class="sliders-list" id='slider_list'>
-        <li><img src="/logo.png"></img></li>
-        <li><img src="/logo.png"></img></li>
-        <li><img src="/logo.png"></img></li>
+        <li><img src="/logo.png" alt='广州创客马拉松'></img></li>
+        <li><img src="/logo.png" alt='广州创客马拉松'></img></li>
+        <li><img src="/logo.png" alt='广州创客马拉松'></img></li>
       </ul>
     </div>
   </div>
@@ -19,7 +23,7 @@
       <div class="ih-item circle effect4 left_to_right">
         <%= link_to about_path do %>
           <div class="img">
-            <img src='/about.png' />
+            <img src='/about.png' alt='<%= t :about %>' />
           </div>
           <div class="info">
             <h3><%= t :about %></h3>
@@ -32,7 +36,7 @@
       <div class="ih-item circle effect4 top_to_bottom">
         <%= link_to signup_path do %>
           <div class="img">
-            <img src='/signup.png' />
+            <img src='/signup.png' alt='<%= t :signup %>'/>
           </div>
           <div class="info">
             <h3><%= t :signup %></h3>
@@ -45,7 +49,7 @@
       <div class="ih-item circle effect4 right_to_left">
         <%= link_to 'http://forum.gzhack.io' do %>
           <div class="img">
-            <img src='/forum.png' />
+            <img src='/forum.png' alt='<%= t :forum %>'/>
           </div>
           <div class="info">
             <h3><%= t :forum %></h3>
