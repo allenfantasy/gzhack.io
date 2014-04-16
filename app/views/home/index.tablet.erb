@@ -1,0 +1,58 @@
+<section id="nav" style='background: #000; height: 50px;'>
+
+</section>
+<section id='logo'>
+  <div class="container">
+    <div class="slider">
+      <ul class="sliders-list" id='slider_list'>
+        <li><img src="/logo.png"></img></li>
+        <li><img src="/logo.png"></img></li>
+        <li><img src="/logo.png"></img></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="entries">
+  <div class='inner'>
+    <div class="entry">
+      <div class="ih-item circle effect4 left_to_right">
+        <%= link_to about_path do %>
+          <div class="img">
+            <img src='/about.png' />
+          </div>
+          <div class="info">
+            <h3><%= t :about %></h3>
+            <p><%= t :about_description %></p>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <div class='entry'>
+      <div class="ih-item circle effect4 top_to_bottom">
+        <%= link_to signup_path do %>
+          <div class="img">
+            <img src='/signup.png' />
+          </div>
+          <div class="info">
+            <h3><%= t :signup %></h3>
+            <p><%= t :signup_description %></p>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <div class="entry">
+      <div class="ih-item circle effect4 right_to_left">
+        <%= link_to 'http://forum.gzhack.io' do %>
+          <div class="img">
+            <img src='/forum.png' />
+          </div>
+          <div class="info">
+            <h3><%= t :forum %></h3>
+            <p><%= t :forum_description %></p>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>
