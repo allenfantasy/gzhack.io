@@ -40,15 +40,17 @@ namespace :deploy do
   task :default do
     update_code
     create_symlink
-    resque.stop
-    unicorn.stop
     db.migrate
-    unicorn.start
-    resque.start
+    restart
   end
   task :start do
     nginx.start
     unicorn.start
+  end
+
+  task :restart do
+    unicorn.restart
+    resque.restart
   end
 
   task :setup_config, roles: :app do

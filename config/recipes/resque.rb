@@ -8,4 +8,10 @@ namespace :resque do
   task :stop, roles: :app do
     run "kill `cat #{pid_dir}/resque.pid`"
   end
+
+  desc "Restart Resque"
+  task :restart, roles: :app do
+    stop
+    start
+  end
 end
