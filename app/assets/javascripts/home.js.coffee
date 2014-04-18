@@ -3,3 +3,4 @@ $(document).ready ->
     delay: 5000
     animationSpeed: 500
     animationType: 'sliding' # could be 'fading', which is the default value
+    pauseOnHover: true

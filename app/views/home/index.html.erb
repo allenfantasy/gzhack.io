@@ -5,13 +5,31 @@
 
 <section id="nav" style='background: #000; height: 50px;'>
 </section>
-<section id='logo'>
+<section>
   <div class="container">
     <div class="slider">
       <ul class="sliders-list" id='slider_list'>
-        <li><img src="/logo.png" alt='广州创客马拉松'></img></li>
-        <li><img src="/logo.png" alt='广州创客马拉松'></img></li>
-        <li><img src="/logo.png" alt='广州创客马拉松'></img></li>
+        <li id="logo"><img src="/logo.png" alt='广州创客马拉松'></img></li>
+        <li>
+          <% 8.times do |i| %>
+            <div class="grid-wrapper guest">
+              <span class="text">
+                Discription
+              </span>
+              <img src="http://placehold.it/350x150" class=<%= "guest-#{i}" %> alt=<%= "guest-#{i}" %>></img>
+            </div>
+          <% end %>
+        </li>
+        <li>
+          <% 32.times do |i| %>
+            <div class="grid-wrapper team-member">
+              <span class="text">
+                Discription
+              </span>
+              <img src="http://placehold.it/350x150" class=<%= "guest-#{i}" %> alt=<%= "guest-#{i}" %>></img>
+            </div>
+          <% end %>
+        </li>
       </ul>
     </div>
   </div>
