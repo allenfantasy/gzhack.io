@@ -8,6 +8,8 @@ zh-CN:
   forum_description: 参与我们的讨论
   sponsor_partners: 赞助与合作
   colleges: 高校
+  submit_work: 作品提交
+  submit_notice: 提交须知
 
   event_introduction: 活动介绍
   goals: 目标与宗旨
@@ -33,6 +35,8 @@ zh-CN:
       designer: 设计师
       pm: 产品经理
       others: 其他
+  work_form:
+    confirm: 提交作品
 
   activerecord:
     # models:
@@ -48,14 +52,29 @@ zh-CN:
         attachments: 个人作品
       attachment:
         file: 文件
+      work:
+        name: 作品名称
+        team: 团队成员
+        url: 作品地址
+        description: 作品描述
     errors:
       models:
         user:
+          failure: 报名失败
+          success: 报名成功
           attributes:
             email:
               invalid: 格式错误
               blank: 不能为空
               uniqueness: 已被使用
+        work:
+          failure: 提交作品失败
+          success: 提交作品成功
+          attributes:
+            name:
+              blank: 不能为空
+            team:
+              blank: 不能为空
   errors:
     messages:
       extension_white_list_error: "格式错误"

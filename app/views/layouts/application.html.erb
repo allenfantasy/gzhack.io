@@ -12,7 +12,23 @@
 <body id="<%= controller_name %>" data-spy="scroll" data-target=".navigation">
 
 <div class="container-fluid main">
-  <%= yield %>
+  <div class="row <%= yield :action_name %>">
+
+    <div class="col-xs-3 col-sm-3 col-md-3 navigation">
+      <div class="affix" data-spy="affix" data-offset-top="60" data-offset-bottom="200">
+        <img src="/logo.png" width="206" alt="2014年首届广州创客马拉松">
+        <ul class="nav nav-pills nav-stacked">
+          <%= yield :sidebar_nav %>
+        </ul>
+      </div>
+    </div>
+
+    <div class="col-xs-9 col-sm-9 col-md-9">
+      <%= render 'shared/header' %>
+      <%= yield %>
+    </div>
+
+  </div>
 </div>
 
 </body>

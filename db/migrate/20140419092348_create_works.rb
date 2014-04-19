@@ -4,6 +4,7 @@ class CreateWorks < ActiveRecord::Migration
       t.string :name
       t.string :url
       t.string :team
+      t.text :description
 
       t.timestamps
     end

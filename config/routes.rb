@@ -14,6 +14,8 @@ Gzhack::Application.routes.draw do
     #get '/colleges' => 'home#colleges'
 
     post '/users' => 'users#create'
+
+    resources :works, :only => [:new, :create]
   end
 
   # Cpanel
