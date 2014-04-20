@@ -25,3 +25,9 @@
   height: 50px;
   padding-top: 20px;
 }
+
+/*   PIE for ihover   */
+.ih-item.circle .info {
+  behavior: asset-url('PIE.htc');
+}
+/* End PIE for ihover */

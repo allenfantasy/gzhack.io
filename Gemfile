@@ -27,6 +27,11 @@ gem 'mobile-fu', '~> 1.3.1'
 
 gem 'sitemap_generator'
 
+# progressive internet explorer, PIE makes Internet Explorer 6-9 capable of rendering
+# several of the most useful CSS3 decoration features.
+# http://css3pie.com/
+gem 'pie-rails', '~> 1.1.0'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
