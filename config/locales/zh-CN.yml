@@ -8,7 +8,7 @@ zh-CN:
   forum_description: 参与我们的讨论
   sponsor_partners: 赞助与合作
   colleges: 高校
-  submit_work: 作品提交
+  submit_project: 作品提交
   submit_notice: 提交须知
 
   event_introduction: 活动介绍
@@ -35,7 +35,7 @@ zh-CN:
       designer: 设计师
       pm: 产品经理
       others: 其他
-  work_form:
+  project_form:
     confirm: 提交作品
 
   activerecord:
@@ -52,7 +52,7 @@ zh-CN:
         attachments: 个人作品
       attachment:
         file: 文件
-      work:
+      project:
         name: 作品名称
         team: 团队成员
         url: 作品地址
@@ -67,7 +67,7 @@ zh-CN:
               invalid: 格式错误
               blank: 不能为空
               uniqueness: 已被使用
-        work:
+        project:
           failure: 提交作品失败
           success: 提交作品成功
           attributes:

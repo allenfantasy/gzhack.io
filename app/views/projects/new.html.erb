@@ -1,18 +1,11 @@
-<% content_for :title, t(:submit_work) %>
+<% content_for :title, t(:submit_project) %>
 <% content_for :action_name, "new" %>
 
 <% content_for :sidebar_nav do %>
   <li><a href="#notice"><%= t :submit_notice %></a></li>
-  <li><a href="#form"><%= t :submit_work %></a></li>
+  <li><a href="#form"><%= t :submit_project %></a></li>
   <li><%= language_nav %></li>
 <% end %>
-
-
-<div id="notice">
-  <% notice_view = default_locale? ? "notice" : "notice_en" %>
-  <%= render notice_view %>
-</div>
-
 
 <div class="col-xs-12 col-sm-12 col-md-12">
   <% flash.each do |type, message| %>
@@ -23,9 +16,14 @@
 <% end %>
 </div>
 
+<div id="notice">
+  <% notice_view = default_locale? ? "notice" : "notice_en" %>
+  <%= render notice_view %>
+</div>
+
 <div id="form">
-  <h4><%= t :submit_work %></h4>
-<%= form_for @work do |f| %>
+  <h4><%= t :submit_project %></h4>
+<%= form_for @project do |f| %>
   <div class="row">
     <div class="form-group col-xs-5">
       <%= f.label :name %>
@@ -51,6 +49,6 @@
     </div>
   </div>
 
-  <%= f.submit t('work_form.confirm'), class: 'btn btn-primary btn-wide' %>
+  <%= f.submit t('project_form.confirm'), class: 'btn btn-primary btn-wide' %>
 <% end %>
 </div>

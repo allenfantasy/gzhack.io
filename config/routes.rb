@@ -15,7 +15,7 @@ Gzhack::Application.routes.draw do
 
     post '/users' => 'users#create'
 
-    resources :works, :only => [:new, :create]
+    resources :projects, :only => [:new, :create]
   end
 
   # Cpanel

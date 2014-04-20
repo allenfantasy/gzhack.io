@@ -30,7 +30,7 @@ en:
   forum_description: Join our forum
   sponsor_partners: "Sponsor & Partners"
   colleges: Colleges
-  submit_work: Project Submission
+  submit_project: Project Submission
   submit_notice: Notice
 
   # sidebar for the about page
@@ -59,8 +59,8 @@ en:
       designer: Designer
       pm: Product Manager
       others: Others
-  work_form:
-    confirm: Submit Work
+  project_form:
+    confirm: Submit project
 
   activerecord:
     # models:
@@ -76,7 +76,7 @@ en:
         attachments: Personal Creations
       attachment:
         file: Your Works
-      work:
+      project:
         team: Team Members
         name: Project Name
         url: Project URL
@@ -91,7 +91,7 @@ en:
               invalid: has invalid format
               blank: should not be blank
               uniqueness: has been taken
-        work:
+        project:
           failure: Submission Failed
           success: Successfully Submitted
   errors:

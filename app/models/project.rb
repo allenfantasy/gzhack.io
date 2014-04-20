@@ -1,3 +1,3 @@
-class Work < ActiveRecord::Base
+class Project < ActiveRecord::Base
   validates_presence_of :name, :team
 end
