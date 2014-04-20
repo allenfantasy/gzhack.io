@@ -22,6 +22,7 @@ Gzhack::Application.routes.draw do
 
   namespace :cpanel do
     resources :events
+    resources :projects, :only => [:show, :index]
     resources :users do
       collection do
         post :export
