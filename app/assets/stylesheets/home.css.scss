@@ -6,6 +6,9 @@ $img-size: 300px;
     text-align: center;
     #logo img { width: 780px; }
 
+    #guest {
+      padding-bottom: 50px;
+    }
     .grid-wrapper {
       position: relative;
       padding: 0;
@@ -13,7 +16,7 @@ $img-size: 300px;
       float: left;
       &.guest {
         width: 25%;
-        height: 50%;
+        /*height: 50%;*/
       }
       &.team-member {
         width: 12.5%;
@@ -34,6 +37,12 @@ $img-size: 300px;
         -moz-transition: all 0.5s ease;
         -o-transition: all 0.5s ease;
         transition: all 0.5s ease;
+
+        .description {
+          font-size: 14px;
+          &.long { font-size: 12px; }
+        }
+        .name { margin: 10px auto; }
       }
       .text:hover {
         opacity:1;
