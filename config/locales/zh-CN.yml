@@ -58,8 +58,9 @@ zh-CN:
         team: 团队成员
         url: 作品地址
         description: 作品描述
-        demo:
-          file: 作品Demo或展示
+        demo: 作品Demo或展示
+      project_attachment:
+        file: 作品Demo或展示
     errors:
       models:
         user:
@@ -77,6 +78,8 @@ zh-CN:
             name:
               blank: 不能为空
             team:
+              blank: 不能为空
+            demo:
               blank: 不能为空
   errors:
     messages:

@@ -50,7 +50,7 @@
   </div>
   <div class="row">
     <div class="form-group col-xs-10">
-      <%= f.fields_for :attachment do |af| %>
+      <%= f.fields_for :demo do |af| %>
         <%= af.label :file %>
         <%= af.file_field :file, :multiple => true, :name => "demo[file][]", :id => 'attachment' %>
         <span class="help-block"><%= t 'project_form.file_specs' %></span>
