@@ -10,17 +10,61 @@
     <div class="slider">
       <ul class="sliders-list" id='slider_list'>
         <li id="logo"><img src="/logo.png" alt='广州创客马拉松'></img></li>
-        <li>
-          <% 8.times do |i| %>
+        <li class="grid">
+          <% 2.times do |i| %>
             <div class="grid-wrapper guest">
-              <span class="text">
+              <div class="text">
                 Discription
-              </span>
+              </div>
               <img src="http://placehold.it/350x150" class=<%= "guest-#{i}" %> alt=<%= "guest-#{i}" %>></img>
             </div>
           <% end %>
+          <div class="grid-wrapper guest">
+            <div class="text">
+              <h4>徐浩</h4>
+              <p> 华南理工大学计算机应用专业硕士，华南理工大学工商管理专业在职博士，现任广东中核高通信息科技股份有限公司CEO，兼任广东省财政厅、广州市财政局财政投资项目绩效评价专家组成员，广东省财政厅政府信息化采购专家组成员，广东省软科学研究会副秘书长。承担信息技术领域国家及省部级重大项目10余项，获得省部级哲学科学一等奖2项，省部级科技进步二等奖1项。</p>
+            </div>
+            <img src="/guests/xh.jpg" class=<%= "guest-#{7}" %> alt=<%= "guest-#{7}" %>></img>
+          </div>
+          <div class="grid-wrapper guest">
+            <div class="text">
+              <h4>陶醉</h4>
+              <p>印美图联合创始人，南方周末新媒体有限公司资深软件工程师，曾从事多个领域的软件开发工作，包括银行业J2EE、软件咨询服务、iOS/Android 开发等。</p>
+            </div>
+            <img src="/guests/tz.jpg" class=<%= "guest-#{7}" %> alt=<%= "guest-#{7}" %>></img>
+          </div>
+          <div class="grid-wrapper guest">
+            <div class="text">
+              <h4>路文杰</h4>
+              <p>网名：老甘/cngump，像阿甘，iOS/GO等全端开发者，技术控， 驻广州，创业中。多年的技术人，红甘果科技CEO，珠三角技术沙龙组委。</p>
+            </div>
+            <img src="/guests/lwj.jpg" class=<%= "guest-#{7}" %> alt=<%= "guest-#{7}" %>></img>
+          </div>
+          <div class="grid-wrapper guest">
+            <div class="text">
+              <h4>陈一斌</h4>
+              <p>爱范儿执行副主编。组织过软件汉化，写过时间管理文章，研究过个人知识管理。关注科技的发展，创投资讯、移动互联网。</p>
+            </div>
+            <img src="/guests/cyb.jpg" class=<%= "guest-#{7}" %> alt=<%= "guest-#{7}" %>></img>
+          </div>
+          <div class="grid-wrapper guest">
+            <div class="text">
+              <h4>李峰</h4>
+              <p>深创投广州公司投资副总监，
+              专注于TMT行业公司中、早期以及扩张期的投资机会，已完成投资案例包括酷狗音乐，ShareSDK等企业。
+              </p>
+            </div>
+            <img src="/guests/lf.jpg" class=<%= "guest-#{7}" %> alt=<%= "guest-#{7}" %>></img>
+          </div>
+          <div class="grid-wrapper guest">
+            <div class="text">
+              <h4>蔡锐涛</h4>
+              <p>有米传媒初创团队成员，现任有米研发中心总监，主要负责有米基础服务架构开发，现致力于高性能基础服务架构的构建。</p>
+            </div>
+            <img src="/guests/crt.jpg" class=<%= "guest-#{7}" %> alt=<%= "guest-#{7}" %>></img>
+          </div>
         </li>
-        <li>
+        <li class="grid">
           <% 32.times do |i| %>
             <div class="grid-wrapper team-member">
               <span class="text">
