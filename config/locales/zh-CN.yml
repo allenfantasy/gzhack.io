@@ -37,6 +37,7 @@ zh-CN:
       others: 其他
   project_form:
     confirm: 提交作品
+    file_specs: 请上传PPT或视频文件
 
   activerecord:
     # models:
@@ -51,12 +52,14 @@ zh-CN:
         homepage: 个人主页
         attachments: 个人作品
       attachment:
-        file: 文件
+        file: 作品
       project:
         name: 作品名称
         team: 团队成员
         url: 作品地址
         description: 作品描述
+        demo:
+          file: 作品Demo或展示
     errors:
       models:
         user:

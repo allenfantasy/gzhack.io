@@ -48,6 +48,15 @@
       <%= f.text_area :description, rows: '5', class: 'form-control' %>
     </div>
   </div>
+  <div class="row">
+    <div class="form-group col-xs-10">
+      <%= f.fields_for :attachment do |af| %>
+        <%= af.label :file %>
+        <%= af.file_field :file, :multiple => true, :name => "demo[file][]", :id => 'attachment' %>
+        <span class="help-block"><%= t 'project_form.file_specs' %></span>
+      <% end %>
+    </div>
+  </div>
 
   <%= f.submit t('project_form.confirm'), class: 'btn btn-primary btn-wide' %>
 <% end %>
