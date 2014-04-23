@@ -1,6 +1,8 @@
 body.cpanel {
   &#users {
     table {
+      table-layout: fixed;
+      word-break: break-all;
       th, td {
         width: 10%;
       }
