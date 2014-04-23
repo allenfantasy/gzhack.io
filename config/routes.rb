@@ -14,12 +14,15 @@ Gzhack::Application.routes.draw do
     #get '/colleges' => 'home#colleges'
 
     post '/users' => 'users#create'
+
+    resources :projects, :only => [:new, :create]
   end
 
   # Cpanel
 
   namespace :cpanel do
     resources :events
+    resources :projects, :only => [:show, :index]
     resources :users do
       collection do
         post :export

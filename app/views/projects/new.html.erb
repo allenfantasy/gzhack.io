@@ -1,0 +1,54 @@
+<% content_for :title, t(:submit_project) %>
+<% content_for :action_name, "new" %>
+
+<% content_for :sidebar_nav do %>
+  <li><a href="#notice"><%= t :submit_notice %></a></li>
+  <li><a href="#form"><%= t :submit_project %></a></li>
+  <li><%= language_nav %></li>
+<% end %>
+
+<div class="col-xs-12 col-sm-12 col-md-12">
+  <% flash.each do |type, message| %>
+    <div class="alert alert-<%= type %> alert-dismissable">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+    <%== message %>
+  </div>
+<% end %>
+</div>
+
+<div id="notice">
+  <% notice_view = default_locale? ? "notice" : "notice_en" %>
+  <%= render notice_view %>
+</div>
+
+<div id="form">
+  <h4><%= t :submit_project %></h4>
+<%= form_for @project do |f| %>
+  <div class="row">
+    <div class="form-group col-xs-5">
+      <%= f.label :name %>
+      <%= f.text_field :name, :class => 'form-control validating' %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="form-group col-xs-5">
+      <%= f.label :team %>
+      <%= f.text_field :team, :class => 'form-control validating' %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="form-group col-xs-10">
+      <%= f.label :url %>
+      <%= f.text_field :url, :class => 'form-control' %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="form-group col-xs-10">
+      <%= f.label :description %>
+      <%= f.text_area :description, rows: '5', class: 'form-control' %>
+    </div>
+  </div>
+
+  <%= f.submit t('project_form.confirm'), class: 'btn btn-primary btn-wide' %>
+<% end %>
+</div>
