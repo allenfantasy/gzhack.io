@@ -85,7 +85,7 @@ en:
       models:
         user:
           failure: Signup Failed
-          success: Successfully Signed Up
+          success: Successfully Signed Up! We will contact you by email very soon.
           attributes:
             email:
               invalid: has invalid format
