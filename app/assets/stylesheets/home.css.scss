@@ -2,6 +2,9 @@ $img-size: 300px;
 
 #home {
   /*home page*/
+  .slider {
+    height: 500px;
+  }
   #slider_list {
     text-align: center;
     #logo img { width: 780px; }
@@ -42,7 +45,6 @@ $img-size: 300px;
           font-size: 14px;
           &.long { font-size: 12px; }
         }
-        .name { margin: 10px auto; }
       }
       .text:hover {
         opacity:1;
