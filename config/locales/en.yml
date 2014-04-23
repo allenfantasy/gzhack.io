@@ -82,7 +82,7 @@ en:
         name: Project Name
         url: Project URL
         description: Project Description
-        attachment: Project demo or presentation
+        demo: Project demo or presentation
       project_attachment:
         file: Project demo or presentation
     errors:

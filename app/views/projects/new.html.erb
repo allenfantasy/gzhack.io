@@ -4,7 +4,13 @@
 <% content_for :sidebar_nav do %>
   <li><a href="#notice"><%= t :submit_notice %></a></li>
   <li><a href="#form"><%= t :submit_project %></a></li>
-  <li><%= language_nav %></li>
+  <li>
+    <% if default_locale? %>
+      <%= link_to "English", new_project_path(:locale => 'en') %>
+    <% else %>
+      <%= link_to "中文", new_project_path(:locale => 'zh-CN') %>
+    <% end %>
+  </li>
 <% end %>
 
 <div class="col-xs-12 col-sm-12 col-md-12">

@@ -81,9 +81,11 @@ zh-CN:
               blank: 不能为空
             demo:
               blank: 不能为空
+              invalid: 是无效的
   errors:
+    format: "%{attribute} %{message}"
     messages:
-      extension_white_list_error: "格式错误"
+      extension_white_list_error: "不可上载 %{extension} 档案，可以上载的档案类型为：%{allowed_types}"
       wrong_size: "大小应为 %{file_size}"
       size_too_small: "太小了 (不能小于 %{file_size})"
       size_too_big: "太大了 (不能大于 %{file_size})"
