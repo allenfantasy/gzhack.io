@@ -1,6 +1,6 @@
 class ProjectAttachmentUploader < AttachmentUploader
   def extension_white_list
-    %w(ppt pptx mp4 avi mov)
+    %w(ppt pptx mp4 avi mov mpeg)
   end
 
   # Override the filename of the uploaded files:

@@ -29,7 +29,7 @@
 
 <div id="form">
   <h4><%= t :submit_project %></h4>
-<%= form_for @project do |f| %>
+<%= form_for @project, :html => { :role => 'form' } do |f| %>
   <div class="row">
     <div class="form-group col-xs-5">
       <%= f.label :name %>
