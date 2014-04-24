@@ -61,6 +61,7 @@ en:
       others: Others
   project_form:
     confirm: Submit project
+    file_specs: Please upload PPT or video file
 
   activerecord:
     # models:
@@ -81,6 +82,9 @@ en:
         name: Project Name
         url: Project URL
         description: Project Description
+        demo: Project demo or presentation
+      project_attachment:
+        file: Project demo or presentation
     errors:
       models:
         user:

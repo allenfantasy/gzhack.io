@@ -12,9 +12,9 @@
 <li>
 <% if default_locale? %>
   <%= link_to "English", signup_path(:locale => 'en') %>
-    <% else %>
+<% else %>
   <%= link_to "中文", signup_path(:locale => 'zh-CN') %>
-    <% end %>
+<% end %>
 </li>
 <% end %>
 

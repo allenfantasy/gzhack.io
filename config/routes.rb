@@ -9,9 +9,7 @@ Gzhack::Application.routes.draw do
     get '/about' => 'home#about'
     get '/signup' => 'home#signup'
     get '/home' => 'home#index'
-    #get '/sponsors' => 'home#sponsors'
     get '/partners' => 'home#partners'
-    #get '/colleges' => 'home#colleges'
 
     post '/users' => 'users#create'
 
@@ -22,7 +20,7 @@ Gzhack::Application.routes.draw do
 
   namespace :cpanel do
     resources :events
-    resources :projects, :only => [:show, :index]
+    resources :projects, :only => [:show, :index, :destroy]
     resources :users do
       collection do
         post :export
