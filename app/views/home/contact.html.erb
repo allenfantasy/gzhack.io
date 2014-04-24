@@ -1,0 +1,22 @@
+<% content_for :title, t(:contact) %>
+<% content_for :meta do %>
+  <link rel="canonical" href="http://gzhack.io/signup" />
+<% end %>
+
+<% content_for :action_name, "contact" %>
+
+<% content_for :sidebar_nav do %>
+  <li><%= language_nav %></li>
+<% end %>
+
+<div class="col-xs-12 col-sm-12 col-md-12" id="signup">
+
+  <h4><%= t :contact %></h4>
+
+  <% if default_locale? %>
+    <%= render "contact_info" %>
+  <% else %>
+    <%= render "contact_info_en" %>
+  <% end %>
+
+</div>

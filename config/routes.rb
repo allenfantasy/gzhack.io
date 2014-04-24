@@ -10,6 +10,7 @@ Gzhack::Application.routes.draw do
     get '/signup' => 'home#signup'
     get '/home' => 'home#index'
     get '/partners' => 'home#partners'
+    get '/contact' => 'home#contact'
 
     post '/users' => 'users#create'
 

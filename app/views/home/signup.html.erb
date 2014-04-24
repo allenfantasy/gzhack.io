@@ -7,15 +7,15 @@
 
 <% content_for :sidebar_nav do %>
   <li><a href="#rules"><%= t :rules %></a></li>
-<li><a href="#signup"><%= t :event_signup %></a></li>
+  <li><a href="#signup"><%= t :event_signup %></a></li>
 
-<li>
-<% if default_locale? %>
-  <%= link_to "English", signup_path(:locale => 'en') %>
-<% else %>
-  <%= link_to "中文", signup_path(:locale => 'zh-CN') %>
-<% end %>
-</li>
+  <li>
+  <% if default_locale? %>
+    <%= link_to "English", signup_path(:locale => 'en') %>
+  <% else %>
+    <%= link_to "中文", signup_path(:locale => 'zh-CN') %>
+  <% end %>
+  </li>
 <% end %>
 
 <div class="col-xs-12 col-sm-12 col-md-12">

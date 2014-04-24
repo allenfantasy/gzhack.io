@@ -24,4 +24,7 @@ class HomeController < ApplicationController
 
   def colleges
   end
+
+  def contact
+  end
 end

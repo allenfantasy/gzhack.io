@@ -22,6 +22,7 @@
 en:
   # header and entries on the homepage
   home: Home
+  contact: Contact
   about: About
   about_description: See hackathon details
   signup: Sign up
