@@ -3,6 +3,7 @@
   <li>
     <span><%= link_to p.name, cpanel_project_path(p) %></span>
     <span><%= p.team %></span>
+    <span><%= demo_for(p) if p.try(:demo).try(:file).try(:file) %>
   </li>
 <% end %>
 </ul>

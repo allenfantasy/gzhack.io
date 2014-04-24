@@ -14,3 +14,9 @@
   <strong>作品介绍:</strong>
   <span><%= @project.description %></span>
 </div>
+<div>
+  <strong>作品DEMO:</strong>
+  <span><%= demo_for(@project) %></span>
+</div>
+
+<%= link_to "删除", cpanel_project_path(@project), :method => :delete, :data => { :confirm => "确定删除吗?" } %>
