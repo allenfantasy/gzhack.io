@@ -86,6 +86,7 @@ en:
         user:
           failure: Signup Failed
           success: Successfully Signed Up! We will contact you by email very soon.
+          dont_hack_me: Hi dear Hacker! Don't hack me!
           attributes:
             email:
               invalid: has invalid format

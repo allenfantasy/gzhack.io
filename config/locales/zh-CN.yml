@@ -62,6 +62,7 @@ zh-CN:
         user:
           failure: 报名失败
           success: 报名成功！我们将很快通过邮件通知您大赛的详情。
+          dont_hack_me: 黑客大大求别黑TuT
           attributes:
             email:
               invalid: 格式错误

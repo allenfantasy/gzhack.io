@@ -11,6 +11,7 @@ class UsersController < ApplicationController
 
     fail_msg = t 'activerecord.errors.models.user.failure'
     succ_msg = t 'activerecord.errors.models.user.success'
+    dont_hack_me = t 'activerecord.errors.models.user.dont_hack_me'
 
     if @user.save
       begin
@@ -23,7 +24,7 @@ class UsersController < ApplicationController
         flash[:alert] = "#{fail_msg}<br>#{e.record.errors.full_messages.join('<br >')}"
         ftype = params[:attachments][:file][0].original_filename
         blacklist.each do |key|
-          flash[:alert] = "#{fail_msg}<br>黑客大大求别黑TuT" if /\.#{key}$/ =~ ftype
+          flash[:alert] = "#{fail_msg}<br>#{dont_hack_me}" if /\.#{key}$/ =~ ftype
         end
         return render_signup
       end
