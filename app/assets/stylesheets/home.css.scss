@@ -25,6 +25,8 @@ $img-size: 300px;
         width: 12.5%;
         height: 25%;
       }
+      &.top { margin: 0 0 5px 5px; }
+      &.bottom { margin-right: 5px; }
 
       .text {
         width: 100%;
