@@ -12,6 +12,9 @@ load "config/recipes/unicorn"
 load "config/recipes/postgresql"
 load "config/recipes/database"
 load "config/recipes/monit"
+load "config/recipes/resque"
+load "config/recipes/sitemap"
+
 
 set :application, "gzhack"
 set :user, "deploy"
@@ -37,13 +40,17 @@ namespace :deploy do
   task :default do
     update_code
     create_symlink
-    unicorn.stop
     db.migrate
-    unicorn.start
+    restart
   end
   task :start do
     nginx.start
     unicorn.start
+  end
+
+  task :restart do
+    unicorn.restart
+    resque.restart
   end
 
   task :setup_config, roles: :app do
@@ -62,7 +69,8 @@ namespace :deploy do
     # uncomment this line if using ckeditor
     # run "ln -s #{shared_path}/ckeditor_assets #{release_path}/public/ckeditor_assets"
     run "ln -nfs #{shared_path}/config/application.yml #{release_path}/config/application.yml"
-    run "ln -s #{shared_path}/content #{release_path}/public/content"
+    #run "ln -s #{shared_path}/content #{release_path}/public/content"
+    run "ln -s #{shared_path}/uploads #{release_path}/public/uploads"
   end
   after "deploy:finalize_update", "deploy:symlink_config"
 

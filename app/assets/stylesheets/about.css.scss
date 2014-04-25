@@ -11,7 +11,7 @@
   color: #f1c40f;
 }
 
-.about #intro {
+.about #intro, .about #intro_en {
   blockquote {
     margin-top: 25px;
   }
@@ -21,11 +21,16 @@
   }
 }
 
-.about, .signup {
-  .navigation ul {
-    text-align: right;
-  }
-  .affix, .affix-top {
-    position: fixed !important;
-  }
+.about #sponsors img {
+  zoom: 0.3;
+  margin: 20px;
+  min-height: 120px;
+  max-height: 300px;
+}
+
+
+.colleges #icons img {
+  min-height: 100px;
+  width: 100%;
+  margin-bottom: 10px;
 }

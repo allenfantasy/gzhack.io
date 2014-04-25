@@ -20,3 +20,4 @@
 public/uploads
 
 *.xls
+.DS_Store

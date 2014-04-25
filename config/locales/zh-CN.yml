@@ -1,16 +1,21 @@
 zh-CN:
   home: 首页
+  contact: 联系我们
   about: 关于
   about_description: 查看创客马拉松详情
   signup: 报名
   signup_description: 参加我们的创客马拉松
   forum: 论坛
   forum_description: 参与我们的讨论
+  sponsor_partners: 赞助与合作
+  colleges: 高校
+  submit_project: 作品提交
+  submit_notice: 提交须知
 
   event_introduction: 活动介绍
-  target: 目标与宗旨
+  goals: 目标与宗旨
   schedule: 大赛日程
-  price: 奖项设置
+  award: 奖项设置
   traffic: 交通
   audience: 面向人群
   event_details: 活动详情
@@ -31,6 +36,9 @@ zh-CN:
       designer: 设计师
       pm: 产品经理
       others: 其他
+  project_form:
+    confirm: 提交作品
+    file_specs: 请上传PPT或视频文件
 
   activerecord:
     # models:
@@ -45,18 +53,41 @@ zh-CN:
         homepage: 个人主页
         attachments: 个人作品
       attachment:
-        file: 文件
+        file: 作品
+      project:
+        name: 作品名称
+        team: 团队成员
+        url: 作品地址
+        description: 作品描述
+        demo: 作品Demo或展示
+      project_attachment:
+        file: 作品Demo或展示
     errors:
       models:
         user:
+          failure: 报名失败
+          success: 报名成功！我们将很快通过邮件通知您大赛的详情。
+          dont_hack_me: 黑客大大求别黑TuT
           attributes:
             email:
               invalid: 格式错误
               blank: 不能为空
               uniqueness: 已被使用
+        project:
+          failure: 提交作品失败
+          success: 提交作品成功
+          attributes:
+            name:
+              blank: 不能为空
+            team:
+              blank: 不能为空
+            demo:
+              blank: 不能为空
+              invalid: 是无效的
   errors:
+    format: "%{attribute} %{message}"
     messages:
-      extension_white_list_error: "格式错误"
+      extension_white_list_error: "不可上载 %{extension} 档案，可以上载的档案类型为：%{allowed_types}"
       wrong_size: "大小应为 %{file_size}"
       size_too_small: "太小了 (不能小于 %{file_size})"
       size_too_big: "太大了 (不能大于 %{file_size})"

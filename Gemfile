@@ -13,10 +13,19 @@ gem 'turbolinks'
 
 gem 'mini_magick'
 gem 'carrierwave'
+gem 'spreadsheet'
+#gem "resque", "~> 2.0.0.pre.1", github: "resque/resque"
+gem 'resque'
+
+gem 'http_accept_language'
 
 gem 'jbuilder', '~> 1.2'
 
 gem 'flat-ui-sass', github: 'wingrunr21/flat-ui-sass'
+
+gem 'mobile-fu', '~> 1.3.1'
+
+gem 'sitemap_generator'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.

@@ -9,26 +9,32 @@ class UsersController < ApplicationController
 
     blacklist = %w(js sh)
 
+    fail_msg = t 'activerecord.errors.models.user.failure'
+    succ_msg = t 'activerecord.errors.models.user.success'
+    dont_hack_me = t 'activerecord.errors.models.user.dont_hack_me'
+
     if @user.save
       begin
         params[:attachments]['file'].each do |a|
           @attachment = @user.attachments.create!(:file => a, :user_id => @user.id)
         end if params[:attachments]
-        flash[:success] = '报名成功！'
+        flash[:success] = succ_msg
       rescue ActiveRecord::RecordInvalid => e
         @user.delete
-        flash[:alert] = "报名失败！<br>#{e.record.errors.full_messages.join('<br >')}"
+        flash[:alert] = "#{fail_msg}<br>#{e.record.errors.full_messages.join('<br >')}"
         ftype = params[:attachments][:file][0].original_filename
         blacklist.each do |key|
-          flash[:alert] = '报名失败！<br>黑客大大求别黑TuT' if /\.#{key}$/ =~ ftype
+          flash[:alert] = "#{fail_msg}<br>#{dont_hack_me}" if /\.#{key}$/ =~ ftype
         end
+        return render_signup
       end
-      redirect_to signup_path
     else
-
       logger.info @user.errors.full_messages
-      redirect_to signup_path, :alert => "报名失败！<br>#{@user.errors.full_messages.join('<br>')}"
+      flash[:alert] = "#{fail_msg}<br>#{@user.errors.full_messages.join('<br>')}"
+      return render_signup
     end
+
+    redirect_to signup_path
   end
 
   private
@@ -36,5 +42,9 @@ class UsersController < ApplicationController
     params.require(:user).permit(:name, :email, :organ, :homepage, :user_type, :about, :attachments_attributes => [:id, :user_id, :file])
   end
 
+  def render_signup
+    @user_attachment = @attachment || @user.attachments.build
+    render 'home/signup'
+  end
 end
 
