@@ -20,13 +20,10 @@
 .eggpain img {
   width: 200px;
 }
-.browser-list {
-  list-style: none;
-}
-.browser-list > div {
+.browser-list .browser {
   float: left;
 }
-.browser-list > div:first-child {
+.browser-list > .browser.first {
   margin-left: 150px;
 }
 .browser-list img {
@@ -45,9 +42,9 @@
     <p>请使用以下浏览器打开我们的主页:</p>
     <p>Please use the following <strong>Modern</strong> browsers to open our website:</p>
     <div class="browser-list">
-      <div><a href="http://www.mozilla.org/en-US/firefox/new/"><img src="/firefox.jpeg"></a></div>
-      <div><a href="https://www.google.com/intl/zh-CN/chrome/browser/"><img src="/chrome.jpeg"></a></div>
-      <div><a href="http://www.apple.com/cn/safari/"><img src="/safari.jpeg"></a></div>
+      <div class="first browser"><a href="http://www.mozilla.org/en-US/firefox/new/"><img src="/firefox.jpeg"></a></div>
+      <div class="browser"><a href="https://www.google.com/intl/zh-CN/chrome/browser/"><img src="/chrome.jpeg"></a></div>
+      <div class="browser"><a href="http://www.apple.com/cn/safari/"><img src="/safari.jpeg"></a></div>
     </div>
   </div>
 </div>
