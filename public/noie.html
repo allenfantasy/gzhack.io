@@ -23,8 +23,11 @@
 .browser-list {
   list-style: none;
 }
-.browser-list li {
-  display: inline-block;
+.browser-list > div {
+  float: left;
+}
+.browser-list > div:first-child {
+  margin-left: 150px;
 }
 .browser-list img {
   width: 100px;
@@ -41,11 +44,11 @@
     <p>OH NO...The engineers are too busy. We don't have time to fit-in these out-dated IE browsers</p>
     <p>请使用以下浏览器打开我们的主页:</p>
     <p>Please use the following <strong>Modern</strong> browsers to open our website:</p>
-    <ul class="browser-list" style="list-style: none;">
-      <li><a href="http://www.mozilla.org/en-US/firefox/new/"><img src="/firefox.jpeg"></a></li>
-      <li><a href="https://www.google.com/intl/zh-CN/chrome/browser/"><img src="/chrome.jpeg"></a></li>
-      <li><a href="http://www.apple.com/cn/safari/"><img src="/safari.jpeg"></a></li>
-    </ul>
+    <div class="browser-list">
+      <div><a href="http://www.mozilla.org/en-US/firefox/new/"><img src="/firefox.jpeg"></a></div>
+      <div><a href="https://www.google.com/intl/zh-CN/chrome/browser/"><img src="/chrome.jpeg"></a></div>
+      <div><a href="http://www.apple.com/cn/safari/"><img src="/safari.jpeg"></a></div>
+    </div>
   </div>
 </div>
 </body>
