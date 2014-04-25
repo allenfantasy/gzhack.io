@@ -41,7 +41,8 @@ group :development do
   gem 'pry-rails'
 end
 
-gem "rack-noie", :require => "noie"
+#gem "rack-noie", :require => "noie"
+gem 'browser'
 
 group :production do
   gem 'unicorn'
