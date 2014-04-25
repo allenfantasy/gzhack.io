@@ -49,8 +49,9 @@ namespace :deploy do
   end
 
   task :restart do
-    unicorn.restart
+    unicorn.stop
     resque.restart
+    unicorn.start
   end
 
   task :setup_config, roles: :app do
