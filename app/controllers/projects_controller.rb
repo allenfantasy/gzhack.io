@@ -5,6 +5,7 @@ class ProjectsController < ApplicationController
   end
 
   def create
+    params[:project][:team] = params[:project][:team].values.join(" ")
     @project = Project.new(project_params)
 
     fail_msg = t 'activerecord.errors.models.project.failure'

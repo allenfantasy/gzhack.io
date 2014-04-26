@@ -47,4 +47,15 @@ $(document).ready(function() {
     });
   }
 
+  if ($('#projects').length > 0) {
+    var $inputs = $('#projects form#new_project .team .inputs')
+    $inputs.find('#add_member').click(function() {
+      $('<input></input>', {
+        'type': 'text',
+        'name': 'project[team][' + $inputs.find('input').length + ']',
+        'class': 'form-control'
+      }).insertBefore($inputs.find('#add_member'));
+    });
+  }
+
 });

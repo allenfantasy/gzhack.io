@@ -36,22 +36,25 @@
       <%= f.text_field :name, :class => 'form-control validating' %>
     </div>
   </div>
-  <div class="row">
-    <div class="form-group col-xs-5">
+  <div class="row team">
+    <div class="form-group col-xs-5 inputs">
       <%= f.label :team %>
-      <%= f.text_field :team, :class => 'form-control validating' %>
+      <input type="text" name="project[team][0]" class='form-control validating'>
+      <a id="add_member" href="javascript:void(0)"><%= t 'project_form.add_member' %></a>
     </div>
   </div>
   <div class="row">
     <div class="form-group col-xs-10">
       <%= f.label :url %>
       <%= f.text_field :url, :class => 'form-control' %>
+      <span class="help-block"><%= t 'project_form.url_specs' %></span>
     </div>
   </div>
   <div class="row">
     <div class="form-group col-xs-10">
       <%= f.label :description %>
       <%= f.text_area :description, rows: '5', class: 'form-control' %>
+      <span class="help-block"><%= t 'project_form.description_specs' %></span>
     </div>
   </div>
   <div class="row">

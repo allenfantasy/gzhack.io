@@ -63,6 +63,9 @@ en:
   project_form:
     confirm: Submit project
     file_specs: Please upload PPT or video file
+    description_specs: Please describe your work in 200 to 500 words
+    url_specs: Please fill-in your URL if your project include some web links
+    add_member: Add member
 
   activerecord:
     # models:
