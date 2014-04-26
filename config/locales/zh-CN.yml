@@ -40,7 +40,7 @@ zh-CN:
     confirm: 提交作品
     file_specs: 请上传PPT或视频文件
     description_specs: "请用200到500字来描述你的作品"
-    url_specs: 如果你的作品含有网址，请填在这一栏
+    url_specs: 如果你的作品能通过URL访问，请将地址填在这一栏
     add_member: 添加成员
 
   activerecord:
