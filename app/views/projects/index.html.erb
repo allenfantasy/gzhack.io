@@ -1,0 +1,70 @@
+<div id="index">
+  <div>
+    <h5><%= @projects.count %>个产品</h5>
+  </div>
+  <hr>
+  <% @projects.each do |p| %>
+    <div class="project-box">
+      <div class="name pull-left">
+        <%= p.name %>
+      </div>
+      <div class="like pull-right">
+        <%= link_to image_tag('contact.jpeg'), '#', :class => 'contact', :data => { :toggle => "modal", :target => "#contact", :pid => p.id } %>
+      </div>
+      <div class="clearfix">
+      </div>
+        <div class="description">
+        <%= p.description %>
+      </div>
+      <hr>
+      <div class="team">
+        <h6><%= t("activerecord.attributes.project.team") %></h6>
+        <% p.team.split(" ").each do |m| %>
+          <span class="member"><%= m %></span>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<div class="modal fade" id="contact" role="dialog" aria-labelledby="contactLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&#x2715;</button>
+        <h6 class="modal-title" id="contactLabel">联系团队</h6>
+      </div>
+      <div class="modal-body">
+        <%= form_for Contact.new, :method => :post, :class => "form", :remote => true do |f| %>
+          <div class="form-group">
+            <%= f.label :name, t("activerecord.attributes.contact.name") %>
+            <%= f.text_field :name, :class => "form-control validating" %>
+          </div>
+          <div class="form-group">
+            <%= f.label :tel, t("activerecord.attributes.contact.tel") %>
+            <%= f.text_field :tel, :class => "form-control validating" %>
+          </div>
+          <div class="form-group">
+            <%= f.label :email, t("activerecord.attributes.contact.email") %>
+            <%= f.text_field :email, :class => "form-control validating" %>
+          </div>
+          <div class="form-group">
+            <%= f.label :role, t("activerecord.attributes.contact.role") %>
+            <%= f.text_field :role, :class => "form-control validating" %>
+          </div>
+          <div class="form-group">
+            <%= f.label :intention, t("activerecord.attributes.contact.intention") %>
+            <%= f.text_area :intention, :rows => 5, :class => "form-control validating" %>
+          </div>
+          <%= f.hidden_field :project_id, :id => "project_id" %>
+          <div class="clearfix"></div>
+          <div class="form-group action">
+            <%= f.submit t('contact_form.confirm'), :class => 'btn btn-primary pull-right' %>
+            <%= button_tag t('contact_form.cancel'), :class => 'btn btn-default pull-left', :data => { :dismiss => "modal" } %>
+          </div>
+        <% end %>
+      </div>
+      <div class="modal-footer"></div>
+    </div>
+  </div>
+</div>

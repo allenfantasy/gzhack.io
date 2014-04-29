@@ -3,5 +3,6 @@ class Project < ActiveRecord::Base
   #validates :demo, :presence => true, :associated => true
 
   has_one :demo, :class_name => "ProjectAttachment"
+  has_many :contacts
   accepts_nested_attributes_for :demo
 end

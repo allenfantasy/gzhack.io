@@ -66,6 +66,9 @@ en:
     description_specs: Please describe your work in 200 to 500 words
     url_specs: Please fill-in your URL if your project include some web links
     add_member: Add member
+  contact_form:
+    confirm: Submit Contact
+    cancel: Cancel
 
   activerecord:
     # models:
@@ -89,6 +92,11 @@ en:
         demo: Project demo or presentation
       project_attachment:
         file: Project demo or presentation
+      contact:
+        name: Name
+        tel: Tel
+        email: Email
+        role: Occupation
     errors:
       models:
         user:

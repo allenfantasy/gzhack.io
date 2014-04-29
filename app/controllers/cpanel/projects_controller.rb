@@ -17,4 +17,18 @@ class Cpanel::ProjectsController < Cpanel::ApplicationController
       redirect_to cpanel_projects_path, :alert => '删除项目失败'
     end
   end
+
+  def new
+  end
+
+  def create
+  end
+
+  def edit
+    @project = Project.find(params[:id])
+  end
+
+  def update
+    @project = Project.find(params[:id])
+  end
 end

@@ -18,5 +18,26 @@
   <strong>作品DEMO:</strong>
   <span><%= demo_for(@project) %></span>
 </div>
+<div>
+  <strong>对这个项目感兴趣的有:</strong>
+  <table class="table table-striped">
+    <tr>
+      <th>#</th>
+      <th>姓名</th>
+      <th>电话</th>
+      <th>邮箱</th>
+      <th>职业</th>
+      <th>联系事由</th>
+    </tr>
+    <% @project.contacts.each do |c| %>
+      <td></td>
+      <td><%= c.name %></td>
+      <td><%= c.tel %></td>
+      <td><%= c.email %></td>
+      <td><%= c.role %></td>
+      <td><%= c.intention %></td>
+    <% end %>
+  </table>
+</div>
 
 <%= link_to "删除", cpanel_project_path(@project), :method => :delete, :data => { :confirm => "确定删除吗?" } %>

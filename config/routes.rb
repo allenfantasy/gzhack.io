@@ -14,14 +14,16 @@ Gzhack::Application.routes.draw do
 
     post '/users' => 'users#create'
 
-    resources :projects, :only => [:new, :create]
+    resources :projects, :only => [:new, :create, :index]
+
+    resources :contacts, :only => [:create]
   end
 
   # Cpanel
 
   namespace :cpanel do
     resources :events
-    resources :projects, :only => [:show, :index, :destroy]
+    resources :projects
     resources :users do
       collection do
         post :export

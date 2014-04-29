@@ -1,10 +1,20 @@
+<table class="table table-striped">
+  <tr>
+    <th>项目名称</th>
+    <th>项目地址</th>
+    <th>团队成员</th>
+    <th>有联系意向的人数</th>
+    <th></th>
+  </tr>
+  <% @projects.each do |p| %>
+    <tr>
+      <td><%= link_to p.name, cpanel_project_path(p) %></td>
+      <td><%= p.url %></td>
+      <td><%= p.team %></td>
+      <td><%= p.contacts.count %></td>
+      <td><%= demo_for(p) %></td>
+    </tr>
+  <% end %>
+</table>
 <ul>
-<% @projects.each do |p| %>
-  <li>
-    <span><%= link_to p.name, cpanel_project_path(p) %></span>
-    <span><%= p.url %></span>
-    <span><%= p.team %></span>
-    <span><%= demo_for(p) %></span>
-  </li>
-<% end %>
 </ul>

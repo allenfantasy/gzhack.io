@@ -22,7 +22,4 @@ class User < ActiveRecord::Base
   def type_name
     TYPES[user_type] || user_type
   end
-
-  def export
-  end
 end

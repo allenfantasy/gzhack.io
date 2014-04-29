@@ -42,6 +42,9 @@ zh-CN:
     description_specs: "请用200到500字来描述你的作品"
     url_specs: 如果你的作品能通过URL访问，请将地址填在这一栏
     add_member: 添加成员
+  contact_form:
+    confirm: 提交联系方式
+    cancel: 取消
 
   activerecord:
     # models:
@@ -65,6 +68,12 @@ zh-CN:
         demo: 作品Demo或展示
       project_attachment:
         file: 作品Demo或展示
+      contact:
+        name: 姓名
+        tel: 电话
+        email: 邮箱
+        role: 职业
+        intention: 事由
     errors:
       models:
         user:
@@ -87,6 +96,19 @@ zh-CN:
             demo:
               blank: 不能为空
               invalid: 是无效的
+        contact:
+          attributes:
+            name:
+              blank: 不能为空
+            tel:
+              blank: 不能为空
+            email:
+              blank: 不能为空
+              invalid: 格式错误
+            role:
+              blank: 不能为空
+            intention:
+              blank: 不能为空
   errors:
     format: "%{attribute} %{message}"
     messages:
