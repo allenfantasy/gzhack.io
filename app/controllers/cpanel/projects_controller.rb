@@ -1,7 +1,7 @@
 # coding: utf-8
 class Cpanel::ProjectsController < Cpanel::ApplicationController
   def index
-    @projects = Project.all
+    @projects = Project.page params[:page]
   end
 
   def show

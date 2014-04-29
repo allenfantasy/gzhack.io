@@ -1,4 +1,5 @@
 class Project < ActiveRecord::Base
+  paginates_per 3
   validates_presence_of :name, :team
   #validates :demo, :presence => true, :associated => true
 
