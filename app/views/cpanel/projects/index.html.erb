@@ -2,6 +2,7 @@
 <% @projects.each do |p| %>
   <li>
     <span><%= link_to p.name, cpanel_project_path(p) %></span>
+    <span><%= p.url %></span>
     <span><%= p.team %></span>
     <span><%= demo_for(p) %></span>
   </li>
