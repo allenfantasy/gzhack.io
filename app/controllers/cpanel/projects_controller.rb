@@ -1,7 +1,7 @@
 # coding: utf-8
 class Cpanel::ProjectsController < Cpanel::ApplicationController
   def index
-    @projects = Project.all
+    @projects = Project.page params[:page]
   end
 
   def show
@@ -16,5 +16,19 @@ class Cpanel::ProjectsController < Cpanel::ApplicationController
     else
       redirect_to cpanel_projects_path, :alert => '删除项目失败'
     end
+  end
+
+  def new
+  end
+
+  def create
+  end
+
+  def edit
+    @project = Project.find(params[:id])
+  end
+
+  def update
+    @project = Project.find(params[:id])
   end
 end

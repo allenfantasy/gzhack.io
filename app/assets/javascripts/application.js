@@ -15,6 +15,7 @@
 //= require bootstrap/alert
 //= require bootstrap/affix
 //= require bootstrap/scrollspy
+//= require bootstrap/modal
 //= require flat-ui
 //= require skdslider
 //= require_tree .
@@ -55,6 +56,12 @@ $(document).ready(function() {
         'name': 'project[team][' + $inputs.find('input').length + ']',
         'class': 'form-control'
       }).insertBefore($inputs.find('#add_member'));
+    });
+
+    // set project_id when click the 'contact' icon
+    $('.contact').on('click', function() {
+      var pid = $(this).data('pid');
+      $('#project_id').attr('value', pid);
     });
   }
 
