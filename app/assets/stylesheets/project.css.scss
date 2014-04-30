@@ -24,6 +24,9 @@
       }
       .description {
         font-size: 16px;
+        p {
+          font-size: 16px !important;
+        }
       }
       .team {
         h6 { font-size: 18px; font-weight: bold; }
