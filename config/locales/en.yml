@@ -22,14 +22,17 @@
 en:
   # header and entries on the homepage
   home: Home
+  contact: Contact
   about: About
   about_description: See hackathon details
   signup: Sign up
-  signup_description: Join our hackathon
+  signup_description: The registration is closed. Thank you!
   forum: Forum
   forum_description: Join our forum
   sponsor_partners: "Sponsor & Partners"
-  #colleges: Colleges
+  colleges: Colleges
+  submit_project: Project Submission
+  submit_notice: Notice
 
   # sidebar for the about page
   event_introduction: What's Hackathon
@@ -57,6 +60,15 @@ en:
       designer: Designer
       pm: Product Manager
       others: Others
+  project_form:
+    confirm: Submit project
+    file_specs: Please upload PPT or video file
+    description_specs: Please describe your work in 200 to 500 words
+    url_specs: Please fill-in your URL if your project include some web links
+    add_member: Add member
+  contact_form:
+    confirm: Submit Contact
+    cancel: Cancel
 
   activerecord:
     # models:
@@ -72,17 +84,37 @@ en:
         attachments: Personal Creations
       attachment:
         file: Your Works
+      project:
+        team: Team Members
+        name: Project Name
+        url: Project URL
+        description: Project Description
+        demo: Project demo or presentation
+      project_attachment:
+        file: Project demo or presentation
+      contact:
+        name: Name
+        tel: Tel
+        email: Email
+        role: Occupation
     errors:
       models:
         user:
+          failure: Signup Failed
+          success: Successfully Signed Up! We will contact you by email very soon.
+          dont_hack_me: Hi dear Hacker! Don't hack me!
           attributes:
             email:
               invalid: has invalid format
               blank: should not be blank
               uniqueness: has been taken
+        project:
+          failure: Submission Failed
+          success: Successfully Submitted
   errors:
     format: "%{attribute} %{message}"
     messages:
+      failure: '%{model} Failed!'
       extension_white_list_error: "invalid file extension"
       wrong_size: "is the wrong size (should be %{file_size})"
       size_too_small: "is too small (should be bigger than %{file_size})"

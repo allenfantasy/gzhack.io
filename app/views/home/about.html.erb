@@ -3,44 +3,28 @@
   <link rel="canonical" href="http://gzhack.io/about" />
 <% end %>
 
-<div class="row about">
+<% content_for :action_name, "about" %>
 
-  <div class="col-xs-3 col-sm-3 col-md-3 navigation">
-    <div class="affix" data-spy="affix" data-offset-top="60" data-offset-bottom="200">
-      <img src="/logo.png" width="206" alt="2014年首届广州创客马拉松">
-      <ul class="nav nav-pills nav-stacked">
-        <li><a href="#intro"><%= t :event_introduction %></a></li>
-        <li><a href="#target"><%= t :goals %></a></li>
-        <li><a href="#schedule"><%= t :schedule %></a></li>
-        <li><a href="#award"><%= t :award %></a></li>
-        <li><a href="#traffic"><%= t :traffic %></a></li>
-        <li><a href="#sponsors"><%= t :sponsor_partners %></a></li>
-        <li>
-          <% if I18n.locale == I18n.default_locale %>
-            <%= link_to "English", :locale => 'en' %>
-          <% else %>
-            <%= link_to "中文", :locale => 'zh-CN' %>
-          <% end %>
-        </li>
-      </ul>
-    </div>
+<% content_for :sidebar_nav do %>
+  <li><a href="#intro"><%= t :event_introduction %></a></li>
+  <li><a href="#target"><%= t :goals %></a></li>
+  <li><a href="#schedule"><%= t :schedule %></a></li>
+  <li><a href="#award"><%= t :award %></a></li>
+  <li><a href="#traffic"><%= t :traffic %></a></li>
+  <li><a href="#sponsors"><%= t :sponsor_partners %></a></li>
+  <li><%= language_nav %></li>
+<% end %>
+
+<%
+  secs_id = %w{intro target schedule award traffic sponsors}
+  secs = if I18n.locale == I18n.default_locale
+           secs_id
+         else
+           secs_id.map{ |s| s + "_en" }
+         end
+%>
+<% secs.each_with_index do |sec, i| %>
+  <div id="<%= secs_id[i] %>">
+    <%= render sec %>
   </div>
-
-  <div class="col-xs-9 col-sm-9 col-md-9">
-    <%= render 'shared/header' %>
-    <%
-      secs_id = %w{intro target schedule award traffic sponsors}
-      secs = if I18n.locale == I18n.default_locale
-               secs_id
-             else
-               secs_id.map{ |s| s + "_en" }
-             end
-    %>
-    <% secs.each_with_index do |sec, i| %>
-      <div id="<%= secs_id[i] %>">
-        <%= render sec %>
-      </div>
-    <% end %>
-  </div>
-
-</div>
+<% end %>

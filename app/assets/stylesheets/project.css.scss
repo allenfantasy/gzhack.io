@@ -1,0 +1,41 @@
+#projects {
+  form .team {
+    input { margin-bottom: 5px; }
+  }
+
+  #index {
+    margin-bottom: 50px;
+    hr {
+      margin: 12px 0;
+      border: none;
+      border-bottom: 1px solid #ccc;
+    }
+    .project-box {
+      margin-top: 24px;
+      border: 1px solid #ccc;
+      padding: 12px;
+
+      .name {
+        font-size: 24px;
+        font-weight: bold;
+      }
+      .like {
+        img { width: 50px; }
+      }
+      .description {
+        font-size: 16px;
+      }
+      .team {
+        h6 { font-size: 18px; font-weight: bold; }
+        .member {
+          padding: 5px;
+          margin: 5px;
+          background-color: #ddd;
+        }
+      }
+    }
+  }
+  &.cpanel {
+    #form { margin-bottom: 50px; }
+  }
+}

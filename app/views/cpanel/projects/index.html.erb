@@ -1,0 +1,28 @@
+<table class="table table-striped">
+  <tr>
+    <th>项目名称</th>
+    <th>项目地址</th>
+    <th>团队成员</th>
+    <th>有联系意向的人数</th>
+    <th></th>
+    <th></th>
+  </tr>
+  <% @projects.each do |p| %>
+    <tr>
+      <td><%= link_to p.name, cpanel_project_path(p) %></td>
+      <td><%= p.url %></td>
+      <td><%= p.team %></td>
+      <td><%= p.contacts.count %></td>
+      <td><%= demo_for(p) %></td>
+      <td>
+        <%= link_to "编辑", edit_cpanel_project_path(p) %>
+        <%= link_to "删除", cpanel_project_path(p), :method => :delete, :data => { :confirm => "确定删除吗?" } %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+<%= paginate @projects %>
+
+<div>
+  <%= link_to '添加作品', new_cpanel_project_path %>
+</div>

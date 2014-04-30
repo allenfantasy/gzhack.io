@@ -1,0 +1,24 @@
+var $alert = $('<div></div>', {
+  "class": "alert alert-dismissable"
+});
+var $button = $('<button></button>', {
+  "type": 'button',
+  "class": 'close',
+  "data-dismiss": 'alert',
+  "aria-hidden": true,
+  "text": '\327'
+});
+
+
+$('.modal-footer').empty();
+<% if @contact.errors.empty? %>
+  $alert.addClass('alert-success');
+  $alert.append("提交成功")
+  $('form')[0].reset()
+<% else %>
+  $alert.addClass('alert-danger');
+  $alert.text("<%= @contact.errors.full_messages.join(',') %>")
+<% end %>
+
+$('.modal-footer').append($alert);
+$alert.prepend($button);

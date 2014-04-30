@@ -1,0 +1,72 @@
+<% content_for :title, t(:submit_project) %>
+<% content_for :action_name, "new" %>
+
+<% content_for :sidebar_nav do %>
+  <li><a href="#notice"><%= t :submit_notice %></a></li>
+  <li><a href="#form"><%= t :submit_project %></a></li>
+  <li>
+    <% if default_locale? %>
+      <%= link_to "English", new_project_path(:locale => 'en') %>
+    <% else %>
+      <%= link_to "中文", new_project_path(:locale => 'zh-CN') %>
+    <% end %>
+  </li>
+<% end %>
+
+<div class="col-xs-12 col-sm-12 col-md-12">
+  <% flash.each do |type, message| %>
+    <div class="alert alert-<%= type %> alert-dismissable">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+    <%== message %>
+  </div>
+<% end %>
+</div>
+
+<div id="notice">
+  <% notice_view = default_locale? ? "notice" : "notice_en" %>
+  <%= render notice_view %>
+</div>
+
+<div id="form">
+  <h4><%= t :submit_project %></h4>
+<%= form_for @project, :html => { :role => 'form' } do |f| %>
+  <div class="row">
+    <div class="form-group col-xs-5">
+      <%= f.label :name %>
+      <%= f.text_field :name, :class => 'form-control validating' %>
+    </div>
+  </div>
+  <div class="row team">
+    <div class="form-group col-xs-5 inputs">
+      <%= f.label :team %>
+      <input type="text" name="project[team][0]" class='form-control validating'>
+      <a id="add_member" href="javascript:void(0)"><%= t 'project_form.add_member' %></a>
+    </div>
+  </div>
+  <div class="row">
+    <div class="form-group col-xs-10">
+      <%= f.label :url %>
+      <%= f.text_field :url, :class => 'form-control' %>
+      <span class="help-block"><%= t 'project_form.url_specs' %></span>
+    </div>
+  </div>
+  <div class="row">
+    <div class="form-group col-xs-10">
+      <%= f.label :description %>
+      <%= f.text_area :description, rows: '5', class: 'form-control' %>
+      <span class="help-block"><%= t 'project_form.description_specs' %></span>
+    </div>
+  </div>
+  <div class="row">
+    <div class="form-group col-xs-10">
+      <%= f.fields_for :demo do |af| %>
+        <%= af.label :file %>
+        <%= af.file_field :file, :multiple => true, :name => "demo[file][]", :id => 'attachment' %>
+        <span class="help-block"><%= t 'project_form.file_specs' %></span>
+      <% end %>
+    </div>
+  </div>
+
+  <%= f.submit t('project_form.confirm'), class: 'btn btn-primary btn-wide' %>
+<% end %>
+</div>

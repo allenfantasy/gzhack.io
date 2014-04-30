@@ -27,6 +27,8 @@ gem 'mobile-fu', '~> 1.3.1'
 
 gem 'sitemap_generator'
 
+gem 'kaminari'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
@@ -40,6 +42,9 @@ group :development do
   gem 'rvm-capistrano'
   gem 'pry-rails'
 end
+
+#gem "rack-noie", :require => "noie"
+gem 'browser'
 
 group :production do
   gem 'unicorn'

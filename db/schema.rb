@@ -11,13 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140411164110) do
+ActiveRecord::Schema.define(version: 20140429031745) do
 
   create_table "attachments", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "file"
     t.integer  "user_id"
+  end
+
+  create_table "contacts", force: true do |t|
+    t.string   "name"
+    t.string   "tel"
+    t.string   "email"
+    t.string   "role"
+    t.text     "intention"
+    t.integer  "project_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "events", force: true do |t|
@@ -28,6 +39,22 @@ ActiveRecord::Schema.define(version: 20140411164110) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.text     "prices"
+  end
+
+  create_table "project_attachments", force: true do |t|
+    t.string   "file"
+    t.integer  "project_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "projects", force: true do |t|
+    t.string   "name"
+    t.string   "url"
+    t.string   "team"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "sponsors", force: true do |t|

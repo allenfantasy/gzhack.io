@@ -20,5 +20,7 @@ module Gzhack
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     I18n.config.enforce_available_locales = false
     config.i18n.default_locale = :'zh-CN'
+
+    #config.middleware.use Rack::NoIE, { :redirect => "/noie.html", :minimum => 9 }
   end
 end
