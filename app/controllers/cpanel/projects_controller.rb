@@ -46,7 +46,22 @@ class Cpanel::ProjectsController < Cpanel::ApplicationController
   end
 
   def update
+    params[:project][:team] = params[:project][:team].values.join(" ")
     @project = Project.find(params[:id])
+
+    fail_msg = t 'activerecord.errors.models.project.failure'
+    succ_msg = t 'activerecord.errors.models.project.success'
+
+    begin
+      @attachment = @project.build_demo(:file => params[:demo][:file][0]) unless params[:demo].nil?
+      @project.update_attributes!(project_params)
+      flash[:success] = succ_msg
+      redirect_to cpanel_projects_path
+    rescue ActiveRecord::RecordInvalid => e
+      flash[:alert] = "#{fail_msg}<br>#{e.record.errors.full_messages.join('<br >')}"
+      @project.build_demo
+      render "edit"
+    end
   end
 
   private
