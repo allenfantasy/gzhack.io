@@ -6,17 +6,12 @@
 <% content_for :action_name, "contact" %>
 
 <% content_for :sidebar_nav do %>
-  <li><%= language_nav %></li>
 <% end %>
 
 <div class="col-xs-12 col-sm-12 col-md-12" id="signup">
 
   <h4><%= t :contact %></h4>
 
-  <% if default_locale? %>
-    <%= render "contact_info" %>
-  <% else %>
-    <%= render "contact_info_en" %>
-  <% end %>
+  <%= render (default_locale? ? "contact_info" : "contact_info_en") %>
 
 </div>
