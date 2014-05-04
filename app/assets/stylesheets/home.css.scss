@@ -35,7 +35,7 @@ $img-size: 300px;
         top: 0;
         color:#000;
         background-color:rgba(255,255,255,0.8);
-        text-align: center;
+        text-align: left;
         z-index: 10;
         opacity: 0;
         -webkit-transition: all 0.5s ease;
@@ -43,8 +43,15 @@ $img-size: 300px;
         -o-transition: all 0.5s ease;
         transition: all 0.5s ease;
 
+        .name {
+          font-size: 36px;
+          margin: 20px 0 5px 30px;
+        }
+
         .description {
           font-size: 14px;
+          font-family: Microsoft YaHei;
+          margin-left: 20px;
           &.long { font-size: 12px; }
         }
       }
