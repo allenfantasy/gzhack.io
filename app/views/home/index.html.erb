@@ -2,16 +2,95 @@
   <link rel="canonical" href="http://gzhack.io/home" />
 <% end %>
 
-
 <section id="nav" style='background: #000; height: 50px;'>
 </section>
-<section id='logo'>
+<section>
   <div class="container">
     <div class="slider">
       <ul class="sliders-list" id='slider_list'>
-        <li><img src="/logo.png" alt='广州创客马拉松'></img></li>
-        <li><img src="/logo.png" alt='广州创客马拉松'></img></li>
-        <li><img src="/logo.png" alt='广州创客马拉松'></img></li>
+        <li id="logo"><img src="/logo.png" alt='广州创客马拉松'></img></li>
+        <li id="guest" class="grid">
+
+          <div class="grid-wrapper guest top" style="width:180px;">
+            <div class="text">
+              <h4 class="name">蔡锐涛</h4>
+              <p class="description">有米传媒初创团队成员，现任有米研发中心总监，主要负责有米基础服务架构开发，现致力于高性能基础服务架构的构建。</p>
+            </div>
+            <img src="/guests/crt.jpg" class=<%= "guest-#{7}" %> alt=<%= "guest-#{7}" %>></img>
+          </div>
+          <div class="grid-wrapper guest top" style="width:180px;">
+            <div class="text">
+              <h4 class="name">陈一斌</h4>
+              <p class="description">爱范儿执行副主编。组织过软件汉化，写过时间管理文章，研究过个人知识管理。关注科技的发展，创投资讯、移动互联网。</p>
+            </div>
+            <img src="/guests/cyb.jpg" class=<%= "guest-#{7}" %> alt=<%= "guest-#{7}" %>></img>
+          </div>
+          <div class="grid-wrapper guest top" style="width: 200px; height: 270px;">
+            <div class="text">
+              <h4 class="name">李峰</h4>
+              <p class="description">深创投广州公司投资副总监，
+              专注于TMT行业公司中、早期以及扩张期的投资机会，已完成投资案例包括酷狗音乐，ShareSDK等企业。
+              </p>
+            </div>
+            <img src="/guests/lf.jpg" class=<%= "guest-#{7}" %> alt=<%= "guest-#{7}" %>></img>
+          </div>
+          <div class="grid-wrapper guest top" style="height: 270px; width: 340px;">
+            <img src="/about.png" style="width: auto; height: auto;" class=<%= "guest-#{7}" %> alt=<%= "guest-#{7}" %>></img>
+          </div>
+          <div class="grid-wrapper guest bottom" style="height: 190px; width: 260px;">
+            <div class="text">
+              <h4 class="name">路文杰</h4>
+              <p class="description">
+              网名 老甘/cngump,
+              <br>
+              像阿甘, iOS/GO等全端开发者, 技术控,
+              <br>
+              驻广州,创业中。
+              <br>
+              多年的技术人, 红甘果科技CEO,
+              <br>
+              珠三角技术沙龙组委。
+              </p>
+            </div>
+            <img src="/guests/lwj.jpg" class=<%= "guest-#{7}" %> alt=<%= "guest-#{7}" %>></img>
+          </div>
+          <div class="grid-wrapper guest bottom" style="height: 190px; width: 200px;">
+            <div class="text">
+              <h4 class="name">陶醉</h4>
+              <p class="description">
+              印美图联合创始人
+              <br>
+              南方周末新媒体有限公司资深软件工程师,
+              <br>
+              曾从事多个领域的软件开发工作
+              </p>
+            </div>
+            <img src="/guests/tz.jpg" class=<%= "guest-#{7}" %> alt=<%= "guest-#{7}" %>></img>
+          </div>
+          <div class="grid-wrapper guest bottom" style="height: 190px;">
+            <div class="text">
+              <h4 class="name">许洪波</h4>
+              <p class="description">华南理工大学教授，广州“创新谷”的联合创始人,董事长，广东省唯一的国家“核高基”科技重大专项总体组成员，具有超过24年IT经验和丰富的创业与管理经验。</p>
+            </div>
+            <img src="/guests/xhb.jpg" class=<%= "guest-#{7}" %> alt=<%= "guest-#{7}" %>></img>
+          </div>
+          <div class="grid-wrapper guest bottom" style="height: 190px; width: 210px;">
+            <div class="text">
+              <h4 class="name">徐浩</h4>
+              <p class="description"> 华南理工大学计算机应用专业硕士，工商管理专业在职博士，现任广东中核高通信息科技股份有限公司CEO，兼任省软科学研究会副秘书长。</p>
+            </div>
+            <img src="/guests/xh.jpg" class=<%= "guest-#{7}" %> alt=<%= "guest-#{7}" %>></img>
+          </div>
+        </li>
+
+        <!--<li class="grid">
+          <% 32.times do |i| %>
+            <div class="grid-wrapper team-member">
+              <img src="http://placehold.it/350x150" class=<%= "guest-#{i}" %> alt=<%= "guest-#{i}" %>></img>
+            </div>
+          <% end %>
+        </li>-->
+        <!--<li id="logo"><img src="/logo.png" alt='广州创客马拉松'></img></li>-->
       </ul>
     </div>
   </div>

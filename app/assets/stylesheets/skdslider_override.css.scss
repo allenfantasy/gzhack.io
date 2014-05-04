@@ -1,3 +1,6 @@
+.skdslider {
+  height: 100%;
+}
 .skdslider ul.slide-navs li {
   background: none;
   width: 10px;
@@ -11,4 +14,8 @@
     background: none;
     background-color: red;
   }
+}
+.skdslider ul.slides li.grid img {
+  width: auto;
+  height: auto;
 }
