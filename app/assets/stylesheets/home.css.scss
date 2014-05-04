@@ -3,7 +3,6 @@ $img-size: 300px;
 #home {
   /*home page*/
   .slider {
-    margin-top: 50px;
     height: 500px;
   }
   #slider_list {
@@ -12,6 +11,7 @@ $img-size: 300px;
 
     #guest {
       padding-bottom: 50px;
+      margin-top: 20px;
     }
     .grid-wrapper {
       position: relative;
